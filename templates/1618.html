@@ -1,0 +1,764 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>1618</title><style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <html lang="en" data-bs-theme="light"><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+
+    <link rel="shortcut icon" type="x-icon" href="/static/cube.png">
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+            color: rgb(55, 53, 47);
+        }
+    }
+    
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+    
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+    
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+    
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+    
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+    
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    
+    mark {
+        background-color: transparent;
+    }
+    
+    .indented {
+        padding-left: 1.5em;
+    }
+    
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+    
+    @page {
+        margin: 1in;
+    }
+    
+    .collection-content {
+        font-size: 0.875rem;
+    }
+    
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        padding: 0 1em;
+    }
+    
+    .column:first-child {
+        padding-left: 0;
+    }
+    
+    .column:last-child {
+        padding-right: 0;
+    }
+    
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+    
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+    
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+    
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+    
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+    
+    table {
+        border-left: none;
+        border-right: none;
+    }
+    
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+    
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+    
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+    
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+    
+    ul > li {
+        list-style: disc;
+    }
+    
+    ul.to-do-list {
+        padding-inline-start: 0;
+    }
+    
+    ul.to-do-list > li {
+        list-style: none;
+    }
+    
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+    
+    ul.toggle > li {
+        list-style: none;
+    }
+    
+    ul {
+        padding-inline-start: 1.7em;
+    }
+    
+    ul > li {
+        padding-left: 0.1em;
+    }
+    
+    ol {
+        padding-inline-start: 1.6em;
+    }
+    
+    ol > li {
+        padding-left: 0.2em;
+    }
+    
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+    
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+    
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+    
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+    
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+    
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+    
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+    
+    .page-description {
+        margin-bottom: 2em;
+    }
+    
+    .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+    }
+    .simple-table td {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table th {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+    }
+    .simple-table-header {
+        font-weight: 500;
+    }
+    
+    time {
+        opacity: 0.5;
+    }
+    
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+    
+    img.icon {
+        border-radius: 3px;
+    }
+    
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+    
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+    }
+    
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+    
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+    
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+    
+    p > .user {
+        opacity: 0.5;
+    }
+    
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+    
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+    
+    code {
+        color: #eb5757;
+    }
+    
+    .code {
+        padding: 1.5em 1em;
+    }
+    
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+    
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+    
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+    
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+    
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+    
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+    
+    html {
+        min-height: 100vh;
+        cursor: url("https://raw.githubusercontent.com/WebDevSimplified/Mix-Or-Match/master/Assets/Cursors/GhostHover.cur"), auto;
+      }
+      
+    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .highlight-default {
+        color: rgba(55, 53, 47, 1);
+    }
+    .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .block-color-default {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+    .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+    .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+    .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+    .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+    .select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+    .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+    .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+    .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+    .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+    .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+    .select-value-color-pageGlass { background-color: undefined; }
+    .select-value-color-washGlass { background-color: undefined; }
+    
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+    
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+    
+    #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff; /* Цвет фона можете настроить по своему усмотрению */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Убедитесь, что z-index достаточно высокий, чтобы анимация была поверх всего остального */
+    }
+        
+    </style><style type="text/css" id="operaUserStyle"></style><style type="text/css"></style></head><body>
+                <!-- Custom styles for this template -->
+                <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+                <!-- Custom styles for this template -->
+                <link href="blog.css" rel="stylesheet">
+           
+              
+        
+                <div id="loader-wrapper" style="display: none;">
+                  <div class="loadingio-spinner-wedges-x4klbswvndr">
+                    <img src="/static/we.gif" alt="Гифка">
+                      <div id="spinner" class="ldio-baznh5xhdqt">
+                          <!-- Ваш код из style.css -->
+                      </div>
+                  </div>
+              </div>
+        
+                <script>
+                 
+                  window.addEventListener('load', function () {
+                     
+                      document.getElementById('loader-wrapper').style.display = 'none';
+                      
+                      document.getElementById('main-content').style.display = 'block';
+                  });
+              </script>
+        
+        
+        <article id="3ba0fe79-934a-4dde-a038-fe0dcf9e3218" class="page sans"><header><div class="page-header-icon undefined"></div><h1 class="page-title">Похід Сагайдачного на Москву</h1><p class="page-description"></p></header><div class="page-body"><hr id="cc6ef806-c507-4e27-b47a-404f9ca7a4e9"><div id="08ee8d49-53b9-4117-81d4-e68c02e6c0e4" class="column-list"><div id="6969fc45-2c59-46c1-925b-7f3f3f69fee3" style="width:75%" class="column"><p id="375bcfd6-518b-43ad-a46c-442fb45ade2a" class=""><em>"Про Конашевича-Сагайдачного"</em></p><p id="7558ca92-eb94-442f-94b1-db9246d010a1" class="">Сагайдачний був наділений надзвичайною мудрістю і, окрім того, — великою відвагою, бравадою та нехтуванням життям; перший ішов у бій, останній його покидав… Петро Сагайдачний, вождь запорізьких козаків, за життя завжди мав славу завдяки своїм чинам на суші і на морі. Був мужем, який мав гострий розум, що рідко зустрічається, незвичайно зрілі судження, також надзвичайну старанність у словах і ділах.</p><p id="a6a64c6c-7cf8-4022-a3c2-85ac1e0971e6" class="">
+    </p><p id="c1ee16c9-418c-41d2-933d-35c9055db567" class=""><mark class="highlight-yellow_background">Похід королевича Польського і царя Московського Владислава на Москву</mark> —  військовий конфлікт між Річчю Посполитою, Військом Запорозьким та Московським царством, який тривав з 1617 по 1618 рік. Під час цього конфлікту коронне та литовське війська, а також запорозькі козаки воювали за здобуття королевичем Владиславом Вазою корони московського царя. Війна завершилась підписанням Деулінського перемир'я. Розглядається як завершальний етап польсько-московської війни (1609—1618).  В Українській історії ця подія також отримала назву Похід Сагайдачного на Москву, оскільки є версія, що 80 % наступаючих військ були козаками</p><p id="674d8619-f6b8-46ca-a9f7-e0e8420bb181" class="">
+    </p><ul id="53ac9d8c-75ed-4fe4-a159-2f27671bccb6" class="toggle"><li><details open=""><summary><strong></strong></summary><div id="efbf3bb2-2fa7-4c24-9b41-e4a564eaba88" class="column-list"><div id="374c1fa2-d4a2-42e9-a2de-66d4821dbb0d" style="width:31.25%" class="column"><nav id="10ce1a8b-6970-4a18-b8b7-2fcc1f8572da" class="block-color-gray_background table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bce72388-a25d-4337-948a-22c5b20dcd1f">History</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6059d063-1404-491f-b6eb-e010a6f71655">Appearance</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#92d8d82b-36f8-4779-94c9-1a349b354f79"></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#85b4ae3c-0ed3-4c87-b7f4-a1c1fe9ae6d5">Abilities</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#25dce00a-5d6a-4d02-95f2-b59abf779f7a">Powers</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7a82aae0-3432-4ea8-bb87-72fbfa3f9c85">Weaknesses</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#dba51057-82ce-4859-9ce3-6369de9fd0b6">Relationships</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#27b7cfee-5fe9-4aa9-ae52-5cc4e0c3263d">Friends &amp; Allies</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2ea2fdd9-16d2-4be8-a74e-5a575cc075b6">Enemies</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9d21b0bc-f27e-4eb6-8a66-10aa7ee8c43e">Trivia</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8c87760d-53a8-4a2d-a138-01615bbc72a2">Gallery</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8580ed7f-5497-4349-b404-dd4eaaa50e05">Full Name</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8f52e268-3672-472e-bbe0-9cc7a6e28812"><strong>General Information</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#00b8b1ba-2823-487d-9dd9-85371a1f29ff"><strong>Characteristics</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7d98bf7b-5b4d-4e92-8a0a-288994c35bcf"><strong>Extended Information</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bf784cd2-10ff-41a8-9f31-72753363a961">Delete everything from here to bottom of the page!</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#df418212-2b41-4789-a6bc-958b99ef54a3">How to edit the sidebar</a></div></nav></div><div id="92270b5b-3e36-488c-93c7-230dc80bc848" style="width:68.75%" class="column"><p id="93f51cfd-797e-45da-bef1-833c214e331a" class="">
+    </p></div></div></details></li></ul><h2 id="bce72388-a25d-4337-948a-22c5b20dcd1f" class="">Передумови</h2><hr id="a6a7d5db-37d1-480b-9425-7bf4c3bbc615"><p id="efda89e9-669d-4721-a32d-b44ff35ad860" class="">В епоху Смутного часу налякані селянсько-козацькими бунтами бояри закликали Річ Посполиту. За договором від 4 лютого 1610 року, укладеним під Смоленськом між королем Сигізмундом III та московитським посольством, королевич Владислав IV, після прийняття православ'я, повинен був зайняти московський престол. Після скинення Василя Шуйського влітку 1610 року московський уряд визнав Владислава царем та навіть приступив до карбування монет від імені «Владислава Жігімонтовіча». Проте Владислав православ'я не приймав, до Москви не прибув і не був вінчаний на царство.
+
+        У жовтні 1612 року в Москві було скинуто боярський уряд королевича Владислава. 21 лютого 1613 року Земським Собором московським царем був обраний Михайло Романов.
+        
+        При цьому Владислав не відмовився від своїх прав на московський престол. На московський похід Владислава надихнув глибокий рейд всередину Московії пана Лісовського 1615 року, який з нечисленним загоном лісовчиків легко пройшов кільцем навколо Москви від Брянська та Орла до Костроми та Мурома і повернувся назад до Речі Посполитої. Влітку 1616 року Вальний сейм підтримав рішення про проведення дворічної воєнної кампанії проти московського царства силами 10-тисячного найманого війська. Військовим керівником походу був призначений Ян-Кароль Ходкевич.</p><h2 id="6059d063-1404-491f-b6eb-e010a6f71655" class="">Початок походу</h2><hr id="92832fed-873e-445e-b66f-6c8bea40cb54"><p id="e8bad7bf-fc55-4cbb-9237-766c8138d21c" class="">6 квітня 1617 року королевич Владислав вирушив із Варшави в похід до Москви з метою отримати корону московського царя. Наприкінці вересня під Смоленськом військо королевича об'єдналось з армією Яна Кароля Ходкевича. 11 жовтня об'єднана річпосполитська армія чисельністю близько 8 тисяч чоловік без бою здобули Дорогобуж. Незабаром, 18 жовтня, так само легко була здобута Вязьма. До кінця 1617 року вдалось завоювати ще Мещовськ, Козельськ, Серпейськ, Рославль. В грудні 1617 року бойові дії припинилися, більша частина коронного війська розмістилась в таборі поблизу м. Вязьми, очікуючи підходу підкріплень. Проте, ані вояків, ані грошей не надійшло. Тому навесні значна частина жовнірів залишила табір і чисельність армії скоротилась до п'яти тисяч чоловік.</p><h2 id="92d8d82b-36f8-4779-94c9-1a349b354f79" class="">Долучення військ Сагайдачного</h2><hr id="df62e984-236a-41e4-bbc9-2281e0fe7288"><p id="c9a06e1b-712d-4c87-9bf6-2244af93c5e4" class="">Аби врятувати королевича і виправити ситуацію, уряд звернувся по допомогу до Війська Запорозького. У березні 1618 року дванадцять запорозьких сотників зустрілись із королевичем Владиславом і пообіцяли привести йому 20-тисячне військо. Підготовку до московського походу обговорювали на двох загальних радах в червні 1618 року. На цих переговорах козаки, зокрема, вимагали припинити утиски православного населення.Після переговорів українське командування під керівництвом гетьмана Петра Сагайдачного розробило план майбутнього походу.</p><h2 id="85b4ae3c-0ed3-4c87-b7f4-a1c1fe9ae6d5" class="">Облога Москви</h2><hr id="753921d2-2bf3-4c6a-9d5e-af79a7a04e72"><p id="7ae1565e-f192-424b-9751-5160232b937e" class="">Наміри Сагайдачного щодо Москви були дуже рішучими і підтвердженням цього є його лист королевичу Владиславу, який було надіслано після 24 вересня. У листі гетьман пише: «Аби Пан Бог всемогутній у досягненні задуму цього до удостоєння призначеного вашій королевичевій милості царства щастив і благословив, а той народ впертий під ноги маєстату свого підбити сприяв».Мапа Москви з атласу Віллема Блау, 1613 р.8 жовтня поблизу Тушино запорожці об'єдналися з силами королевича Владислава. Як подарунок козаки вручили королевичу лівенських та єлецьких воєвод, царських послів та полонених татар. Напередодні прибуття Сагайдачного литовський гетьман Ян Кароль Ходкевич розробив план штурму Москви. Цей план полягав у одночасному штурмі столиці з декількох сторін, з головними ударама біля Арбатських та Тверських воріт. Основною атакуючою силою виступали польські війська та найманці. Військо запорожців було розділено на декілька частин, частина з них направлялись на штурм острогу за Москва-рікою, решта мусила виконувати роль резерву та відволікати царські війська від головних напрямків.11 жовтня військо королевича Владислава та козаки Петра Сагайдачного розпочали наступ на Москву. Штурм тривав протягом декількох годин з третьої ночі і до світанку. Нападникам вдалося увірватись до міста зі сторони Арбатських воріт, проте, не отримавши належну підтримку, атака зупинилася. Не бачачи можливості продовження атаки, польські підрозділи із невеликими втратами відступили від міста.</p><h3 id="25dce00a-5d6a-4d02-95f2-b59abf779f7a" class="">Завершення війни. Деулінське перемир'я. Частина 1
+</h3><ul id="f50a1ff6-913a-401a-81d1-95b6e2ba37dc" class="bulleted-list"><li style="list-style-type:disc">Важка воєнна обстановка змусила московську владу піти на переговори, що вперше відбулися 31 жовтня поблизу Тверських воріт. Протягом листопада велись тривалі переговори між річпосполитськими та московитськими послами. Кожна із сторін очікувала скорішого виснаження свого супротивника. Тим часом окремі загони запорожців продовжували атакувати московські міста на північ та північний-захід від Москви, розорюючи Ярославський і Вологодський повіти, тим самим підриваючи економічні ресурси московитів.</li></ul><h3 id="7a82aae0-3432-4ea8-bb87-72fbfa3f9c85" class="">Завершення війни. Деулінське перемир'я. Частина 2</h3><ul id="faabb081-ddd1-4669-af2b-e85c7ece927b" class="bulleted-list"><li style="list-style-type:disc">Після повернення до України, військо Сагайдачного розмістилось на постій у Київському воєводстві, а гетьманський полк у самому Києві. За свою участь у московському поході запорожці отримали грошову винагороду в розмірі 20 000 золотих та 7000 штук сукна. За словами Д. І. Яворницького — по прибутті до Києва Петро Сагайдачний прийняв титул «гетьмана України» й став управляти тією її частиною, яка визнавала себе козацькою.</li></ul><h2 id="dba51057-82ce-4859-9ce3-6369de9fd0b6" class=""></h2><h2 id="9d21b0bc-f27e-4eb6-8a66-10aa7ee8c43e" class="">"Цитати"</h2><hr id="05a5b1dc-ded0-4401-859d-4075ed438730"><ul id="8c848ed8-b9e8-4e64-ada3-99795bba1240" class="bulleted-list"><li style="list-style-type:disc">Пес не втікає від хліба, лише від кия.</li></ul><ul id="2e05d207-a7fb-4902-80a4-27c40e2fc8db" class="bulleted-list"><li style="list-style-type:disc">Та правда не буває така пекуча, коли її у гарну форму прибереш.</li></ul><ul id="e95d3a5b-40d2-4405-93b1-f217e571b0fe" class="bulleted-list"><li style="list-style-type:disc">Молодого кортить у світ, між людей розуму добути та слави нажити. Старі люде говорять, що те все, за чим люде ганяють, суєта. Молодий, хоч вірить тому, а все ж хоче сам те все збагнути, інакше не може бути, бо світ звівся б нінащо.</li></ul><h2 id="8c87760d-53a8-4a2d-a138-01615bbc72a2" class=""></h2><hr id="6cc62827-7afb-434b-b8c0-547c31caa591"><div id="ba88ed68-cd80-4796-96f3-3e5a5bbe1390" class="column-list"><div id="b0ed43b5-38f7-45a5-a8db-f02370fcfc40" style="width:33.333333333333336%" class="column"><figure id="a15d30d9-e7d7-4676-bddb-2936b1356ebd" class=""><a href=""><img src=""></a></figure></div><div id="36032c21-dba8-47e7-8fa3-98482128d276" style="width:33.333333333333336%" class="column"><figure id="90008e17-047f-42cb-9ab8-87e4a37b680a" class=""><a href=""><img src=""></a></figure></div><div id="d729c5ac-d8e3-430a-8c8d-a3008fef04c7" style="width:33.33333333333333%" class="column"><figure id="48ebef15-d2f5-4af5-98b9-3610eb4caf24" class=""><a href=""><img src=""></a></figure></div></div></div><div id="f7c40908-0113-4b4c-b96b-c6696cc50f49" style="width:25%" class="column"><h3 id="8580ed7f-5497-4349-b404-dd4eaaa50e05" class="block-color-gray_background">Петро Конашевич-Сагайдачний</h3><figure id="d34bfcf9-4c58-4dff-a56d-513931251fcd" class="image">
+  <a href=""><img src="/static/ikona.jpg"></a>
+</figure>
+<h3 id="8f52e268-3672-472e-bbe0-9cc7a6e28812" class="block-color-gray_background"><strong>Інформація</strong></h3><div id="ebc0f8e8-394b-4f2f-920b-96954ab82932" class="column-list"><div id="bd010973-89df-4bde-97b9-2941a4b0a353" style="width:43.75%" class="column"><p id="4623006b-e1a5-4355-8b82-863be34fa3e9" class=""><strong>Прізвище/Ім'я</strong></p><p id="9e4d1a17-5a2e-4891-9956-c43b69e7393d" class=""><strong>Псевдонім</strong></p><p id="b9040390-18af-4c00-976b-bd6d06a4d727" class=""><strong>Статус</strong></p><p id="5ce3d7ff-5e8c-45b3-a77b-b682373259a3" class=""><strong>Соціальний статус</strong></p></div><div id="e9d3e763-2f88-47da-924a-fe0e64274503" style="width:56.25%" class="column"><p id="88f0b835-07a3-4f29-ada8-bd64ceaeadf2" class="">Петро Конашевич-Сагайдачний</p><p id="1599eebc-371d-4597-afbd-bf2ae322b85a" class="">-</p><p id="f88225a2-34dc-40a8-9c33-fa8fc3d2107b" class="">дипломат, офіцер, політик</p><p id="b27ccd5f-6f53-48f6-95b4-1c50c359adb7" class="">Мертвий</p></div></div><h3 id="00b8b1ba-2823-487d-9dd9-85371a1f29ff" class="block-color-gray_background"><strong>Характеристика</strong></h3><div id="732e152c-7458-405e-8c02-5fae0fc5f248" class="column-list"><div id="98a98458-da52-4362-a8a0-287ca7a31ce8" style="width:37.5%" class="column"><p id="7c910881-e376-404d-8c5a-1028ed328753" class=""><strong>Гендер</strong></p><p id="45871990-9444-4451-83f9-03c9e6887453" class=""><strong>-</strong></p><p id="8bc9071b-531e-419f-aea8-abcbce93bdf5" class=""><strong>Скільки років</strong></p><p id="a76d4aa2-bc42-4c3e-82f0-a78ec9665935" class=""><strong>Зріст</strong></p><p id="0c739c3b-ad53-4cfe-8fbe-99cd3dd7a7a0" class=""><strong>Вага</strong></p><p id="12fe16c2-2ada-46f4-a1fb-392150ec8299" class=""><strong>Очі</strong></p><p id="3536fcb7-52f0-4661-8893-190612a1214b" class=""><strong>Волосся</strong></p><p id="fa5bf5d0-9cf9-48e2-8a06-6e30e0705b3b" class=""><strong>-</strong></p></div><div id="61487ecd-23f9-451e-8767-4f1fec15efe0" style="width:62.5%" class="column"><p id="fa18aa06-40d8-4087-9c33-1e8c17bdfa49" class="">Чоловік</p><p id="a5c758d5-0901-4c6f-b52a-9774d43fb1f7" class="">-</p><p id="ac45697f-8c7d-4093-b307-88db1b863e3a" class="">39</p><p id="e3b529e5-76bd-432f-9ff7-f87faf3f6f89" class="">-</p><p id="78019e27-26ba-4680-810b-a7f1a3975efa" class="">-</p><p id="e62c3f94-e295-4e87-9105-8134703a86b2" class="">-</p><p id="f61f4cc3-e0b8-4e74-afcc-0720e7cd3429" class="">-</p><p id="7006c33a-cd9f-403b-b586-f2d6bcc9c0b8" class="">-</p></div></div><h3 id="7d98bf7b-5b4d-4e92-8a0a-288994c35bcf" class="block-color-gray_background"><strong>Extended Information</strong></h3><div id="005e33fe-87da-49a4-baa7-c52da75e4926" class="column-list"><div id="40648d4f-0eb7-4871-86b2-4304d1deb6bf" style="width:37.5%" class="column"><p id="8bb04645-0ebf-4431-99b8-7142a44c5af3" class=""><strong></strong></p><p id="de9746b6-42d5-434e-8b8c-8662221f1bf4" class=""><strong>
+    
+
+    </strong></p><div class="container"><strong>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 text-body-secondary">© 2023 Wikipedia by q1dox</p>
+      
+          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+      
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="wikiuser" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+        </footer>
+      </strong></div><strong>
+</strong></div><strong>
+</strong></div></div></div></div></article><iframe src="https://www.ciuvo.com/ciuvo/globalstorage?version=2.1.4" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe></body></html>

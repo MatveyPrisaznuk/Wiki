@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" type="x-icon" href="/static/cube.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" type="x-icon" href="/static/cube.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.118.2">
+        <title>Napoleon Wars</title>
+    
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    
+        
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+        <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    
+    
+        <style>
+          html {
+            min-height: 100vh;
+            cursor: url("https://raw.githubusercontent.com/WebDevSimplified/Mix-Or-Match/master/Assets/Cursors/GhostHover.cur"), auto;
+          }
+
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+          }
+    
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+    
+          .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+          }
+    
+          .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+          }
+    
+          .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+          }
+    
+          .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+          }
+    
+          .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+    
+          .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+          }
+    
+          .bd-mode-toggle {
+            z-index: 1500;
+          }
+    
+          .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+          }
+          #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff; /* Цвет фона можете настроить по своему усмотрению */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Убедитесь, что z-index достаточно высокий, чтобы анимация была поверх всего остального */
+        }
+        </style>
+    
+        
+        <!-- Custom styles for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="blog.css" rel="stylesheet">
+
+      <body>
+        <div id="loader-wrapper">
+          <div class="loadingio-spinner-wedges-x4klbswvndr">
+            <img src="{{ url_for('static', filename='we.gif') }}" alt="Гифка">
+              <div id="spinner" class="ldio-baznh5xhdqt">
+                  <!-- Ваш код из style.css -->
+              </div>
+          </div>
+      </div>
+
+        <script>
+          // Сценарий для скрытия загрузочной анимации и отображения основного контента после полной загрузки страницы
+          window.addEventListener('load', function () {
+              // Скрываем загрузочную анимацию
+              document.getElementById('loader-wrapper').style.display = 'none';
+              // Отображаем основной контент
+              document.getElementById('main-content').style.display = 'block';
+          });
+      </script>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+
+    
+        
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+      </symbol>
+      <symbol id="cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+      </symbol>
+    </svg>
+    
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+
+          </div>
+          <div class="col-4 text-center">
+            <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Napoleon Wars</a>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" href="#" aria-label="Search">
+              
+            </a>
+            
+          </div>
+        </div>
+      </header>
+    
+      <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+          <a class="nav-item nav-link link-body-emphasis" href="#">World</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
+          <a class="nav-item nav-link link-body-emphasis active" href="#"> Napoleon</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+        </nav>
+      </div>
+    </div>
+    
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div class="col-lg-6 px-0">
+          <h1 class="display-4 fst-italic">Наполеонівські війни</h1>
+          <p class="lead my-3">Наполео́нівські ві́йни (1799—1815) — серія з кількох воєн, проведених антифранцузькими коаліціями у період Консульства (1799—1804) й імперії Наполеона (1804—1814, 1815).</p>
+        </div>
+      </div>
+    
+  
+
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis">----</strong>
+              <h3 class="mb-0">Передумови війни</h3>
+              <div class="mb-1 text-body-secondary">1799</div>
+              <p class="mb-auto">Наполеон Бонапарт скористався здобутками Великої французької революції. Після перевороту 18—19 брюмера VIII року (9 листопада 1799), він, як перший консул очолив Французьку республіку. Цей переворот знаменував собою остаточне закінчення революції. Наполеон провадив політику, спрямовану на централізацію влади та концентрацію її у власних руках. Для цього за Кодексом Наполеона було створено складний бюрократичний апарат, головним завданням якого було виконання волі першого консула.</p>
+
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="/static/np.jpg" alt="Placeholder: Thumbnail" role="img" aria-label="Placeholder: Thumbnail">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            Хід війни
+          </h3>
+    
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-body-tertiary rounded">
+              <h4 class="fst-italic">Розгром Третьої коаліції</h4>
+              <p class="mb-0">Занепокоєний бурхливою підготовкою плану Наполеона щодо висадки на Британських островах, Кабінет міністрів Великої Британії розгорнув активну діяльність щодо підготовки сильної антифранцузької коаліції на континенті. До 1805 року вдалось створити третю антифранцузьку коаліцію в складі Великої Британії, Австрійської імперії та Російської імперії. Велика Британія мала фінансувати дії союзників, а Австрійська імперія та Російська імперія — виставляти свої війська на полях битв. Для цього союзники розробили грандіозний план розгрому Французької імперії. На півночі Європи, проти Данії-Норвегії мала діяти 100 тис. російсько-британська армія. У Центральній Європі, проти Курфюрства Баварія та прирейнських союзників Наполеона — 80 тис. австрійська армія Макка, на допомогу якій з Російської імперії рухалась 45 тис. армія Кутузова. </p>
+            </div>
+    
+  
+    
+            
+    </main>
+  
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        
+    
+    <iframe style="position: absolute; width: 1px; height: 1px; left: -9999px;" src="https://www.ciuvo.com/ciuvo/globalstorage?version=2.1.4"></iframe>
+  
+  
+    <body>
+      <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+          <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+          <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+          <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+        </symbol>
+      </svg>
+
+      
+  <main>
+    <div class="container py-4">
+      <header class="pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+          <span class="fs-4">Четверта коаліція</span>
+        </a>
+      </header>
+  
+      <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">1806-х</h1>
+          <p class="col-md-8 fs-4">Розбивши Австрію та Росію, Наполеон тепер не брав у розрахунок і Пруссію. Так, віддавши їй Ганновер, він потім вирішив знову відібрати його. Пересуваючи війська через Пруссію, він не зважав за потрібне питати дозволу в уряду - тобто поводив себе за правом переможця. Зрозумівши, що Пруссії загрожує окупація, берлінський двір вступив у союз із Росією та Англією. У вересні 1806 р. ці держави разом зі Швецією утворили четверту коаліцію.</p>
+          <button class="btn btn-primary btn-lg" type="button"></button>
+        </div>
+      </div>
+  
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-bg-dark rounded-3">
+            <h2>4 Коаліція</h2>
+            <p>Прагнучи не допустити об´єднання сил своїх противників, Наполеон вирішив розгромити Пруссію. Тим часом половина прусської армії була розкидана по десяткам гарнізонів. Прусські генерали зневажали досвід ведення війн наполеонівськими військами. Організація й тактика прусської армії були вкрай відсталими. В армії панували муштра та дідовщина.
+
+              14 жовтня 1806 р. Наполеон зненацька атакував і розбив частину прусської армії під Ієною, того ж дня його маршал Даву розгромив головні сили прусаків під Ауерштадтом. У Пруссії спалахнула жахлива паніка. Гарнізони здавалися один за одним без жодного пострілу. Армія Наполеона вступила у Берлін. Пруссія приєдналася до континентальної блокади. Ця блокада втягувала Францію до безмежного поширення боротьби за світове панування, оскільки без забезпечення участі в блокаді всіх країн Європи не можна було досягнути придушення Англії економічними засобами.</p>
+            <button class="btn btn-outline-light" type="button"></button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+            <h2>1807</h2>
+            <p>Наполеон, розбивши Пруссію, рушив свої війська проти російської армії, яка стояла у східній Пруссії. 7 лютого 1807 р. біля Прейсіш-Ейлау відбулася запекла битва. Обидві армії зазнали тяжких втрат, але росіяни вистояли. Вперше Наполеонові не вдалося добитися рішучої перемоги. Проте 14 липня 1807 р. він усе ж таки розбив російську армію біля Фридланду. Становище Росії швидко погіршувалося.Франція, таким чином, отримала свободу дій у Європі. По наполяганню Олександра І Наполеон повернув Пруссії частину земель на схід від Ельби. Білостоцький округ відійшов до Росії. Польські землі були відібрані у Пруссії, утворивши герцогство Варшавське. Росія за угодою мала приєднатися до континентальної блокади проти Британії.</p>
+            <button class="btn btn-outline-secondary" type="button"></button>
+          </div>
+        </div>
+      </div>
+
+      <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+          <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+          <h1 class="text-body-emphasis">Вторгнення Наполеона на Піренейський півострів</h1>
+          <p class="col-lg-8 mx-auto fs-5 text-muted">
+            У 1807 р. за підтримки Іспанії Бонапарт зажадав від Португалії, щоб вона приєдналася до континентальної блокади проти Великої Британії. В <code>Лісабоні </code> не погоджувалися на це, тому між Наполеоном й Іспанією була підписана угода про завоювання й розподіл Португалії з її колоніями. Влада Іспанії погодилася на прохід до Португалії французької армії. Однак на боці Португалії виступила Британія, що ввела свої війська на територію цієї країни, і вторгнення французів було відбито. У 1808 р. французькі війська вдерлись в Іспанію. Наполеон призначив королем свого брата Жозефа. Однак в Іспанії почалася визвольна війна, яку підтримала Британія. Франція була змушена послати в цю країну війська. І бойові дії там не вщухають до самого скинення Наполеона в 1814 році.
+          </p>
+            </button>
+            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+
+            </button>
+          </div>
+        </div>
+    
+        
+    <main class="container py-5">
+      <h1>Наслідки походу в Москву</h1>
+      <p class="lead">У 1808—1811 Французька імперія досягла піку своєї могутності. Але на шляху до повного панування в Європі стояли Велика Британія та Російська імперія. Якщо вторгненню до Британських островів заважали Військово-морські сили Великої Британії, які уже продемонстрували свою могутність у Трафальгарській битві, то шлях до Російської імперії був відкритий.</p>
+    
+      <p>Між тим відносини між Французькою та Російською імперіями загострювалися. Континентальна блокада, у якій Російська імперія брала участь за умовами Тільзитського миру, була їй невигідна і тому часто порушувалася.</p>
+    
+      <pre><code>
+    &lt;Каменем спотикання між двома імперіями стало «польське питання». Із захоплених на західному кордоні Російської імперії земель Наполеон створив Герцогство Варшавське, де діяла конституція, яка звільнила селян від кріпацтва. Це становило загрозу для Російської імперії, і Олександр І підписав таємний договір із Королівством Пруссія про спільний напад на Герцогство Варшавське. У відповідь на це Наполеон ввів до польських земель свої війська. Крім того, Французька імперія підштовхувала Османську імперію та Персію до війни з Російською імперією&gt;
+      </code></pre>
+    
+      <p>Російська імперія також мала величезну армію у 900 тис. осіб, проте вони розташовувалися у різних частинах держави — на <code> Кавказі, у Криму, Фінляндії, Молдавії. </code> Таким чином, на західному кордоні проти військ Наполеона було зосереджено близько <code>240 тис. осіб</code> розподілених на три армії, які прикривали основні напрямки.</p>
+      <p><code>24 червня 1812 </code> без оголошення війни, Наполеон напав на Російську імперію, розраховуючи розбити російську імператорську армію в одній генеральній битві.</p>
+      <hr class="my-5">
+    
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 690px;">
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/wv.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+
+            <div class="card-body">
+              <h5 class="card-title">Передумови</h5>
+              <p class="card-text">Під гаслом миру й введення в країні конституції, імператор Наполеон знову запанував у Франції. Саме із пропозицією миру він звернувся до Російської імперії, Великої Британії, Австрійської імперії й Королівства Пруссія — миру на умовах status quo. Однак члени Віденського конгресу поставилися до повернення «корсиканського чудовиська» різко негативно. 13 березня глави європейських урядів прийняли Декларацію, що оголосила Наполеона поза законом. Подібний крок означав для Франції війну з усією Європою. 25 березня юридично була оформлена Сьома коаліція.
+
+                Навесні 1815 року положення Франції було загрозливим. ЇЇ військові сили були виснажені в попередніх кампаніях. Під рукою в імператора безпосередньо перебувало лише близько 130 тисяч чоловік при 344 гарматах, у той час, як Союзні сили могли виставити відразу близько 700 тисяч чоловік, а до кінця літа ще 300 тисяч, сподіваючись рушити проти Франції більш ніж мільйонною армією.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+          <div class="card p-3">
+            <figure class="p-3 mb-0">
+              <blockquote class="blockquote">
+                <p>Битва під Ватерлоо</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                <cite title="Source Title">Битва під Ватерлоо — вирішальний бій, що відбувся 18 червня 1815 року і став остаточною поразкою Наполеона І. Французька армія під командуванням Наполеона Бонапарта була розбита двома арміями Сьомої коаліції: армією союзників Великої Британії під командуванням герцога Веллінгтона та пруською армією під командуванням Гебгарда Леберехта фон Блюхера. Битва ознаменувала кінець Наполеонівських воєн.
+
+                  Бій відзначився відчайдушними рукопашними боями за окремі сільські будинки, зіткненням двох елітних військ — Старої Гвардії Наполеона і британської гвардійської бригади.</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/pan.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+            <div class="card-body">
+              <h5 class="card-title">Поле битви</h5>
+              <p class="card-text">Позиція біля Ватерлоо була міцною. Вона складалася з довгого хребта, що йде зі сходу на захід, перпендикулярно до головної дороги, що веде до Брюсселя. По гребеню хребта проходила дорога Огайн. Біля перехрестя з Брюссельською дорогою був великий в'яз, який знаходився приблизно в центрі позиції Веллінгтона і служив його командним пунктом протягом більшої частини дня. Герцог розгорнув свою піхоту в лінію, паралельно до дороги Огайн.
+
+                Використовуючи задній бік схилу, Веллінгтон приховав свою армію від французів, за винятком легкої піхоти та артилерії. Довжина фронту була відносно короткою — 4,0 км (2,5 милі). Це дозволило Веллінгтону глибоко розташувати свої сили, що він і зробив у центрі та справа, аж до села Braine-l'Alleud, розраховуючи на те, що Пруссія підсилить його лівий фланг протягом битви.</p>
+              <p class="card-text"><small class="text-body-secondary">1815</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 171px;">
+          <div class="card text-bg-primary text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>Бель-Ал'янсі</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-white">
+              <cite title="Source Title">Пруссаки називали також цю битву — битвою під Бель-Ал'янсі, а французи — під Мон-Сен-Жан.
+
+                  Після битви при Лін'ї та бою під Катр-Бра Наполеон вважав, що пруссаки розбиті, відкинуті до річки Маас, і переслідувані маршалом Груші. Він вирішив скористатись роздрібленістю сил союзників і розбити армію Веллінгтона (британці, голландці, брауншвейзьці, ганноверці) до їхнього об'єднання з пруссаками. Веллінгтон очистив позицію біля Катр-Бра і вирішив прийняти битву на позиції біля Ватерлоо, отримавши повідомлення від Блюхера про його прибуття вже наступного дня. Позиція розташовувалася на Мон-Сен-Жанскому плато, обабіч брюссельської дороги, від села Мерб-Брен до ферми Лавалет.</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 310px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Армії</h5>
+              <p class="card-text">Сили союзників доходили до 70 тисяч чоловік, при 159 гарматах, сили французів — до 72,5 тисяч, при 240 гарматах.
+
+                Британці та союзники — 67 000 солдатів різного ступеня підготовки (британці, голландці, бельгійці, представники малих німецьких князівств)
+                Пруссаки — 25—60 тисяч солдатів різного ступеня підготовки (підрахунок неточний, бо пруссаки підійшли пополудні, а частина відділів взагалі не дійшла на місце бою)
+                Французи (Armée du Nord) — 73 000 солдатів різного ступеня підготовки й досвіду (від ветеранів Старої гвардії до «необстріляних» рекрутів, для котрих перші битви були при Катр-Бра і Лін'ї 16 червня 1815 р.)</p>
+              <p class="card-text"><small class="text-body-secondary">1815</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 362px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/vat1.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 378px;">
+          <div class="card p-3 text-end">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>Втрати та полонені</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+              <cite title="Source Title">Французький генерал Камбронн був важко поранений і взятий в полон британцями. В ході бою загинули французькі генерали Дюем і Дево. Британці втратили генералів Піктона і Понсобі. 25 тисяч французів й 22 тисячі британців і пруссаків полягли на полі бою вбитими й пораненими. Армія Наполеона, як організована сила, перестала існувати. Майже вся артилерія була загублена, дух армії зломлений, свіжих сил практично не було. Так була поставлена остання крапка в історії наполеонівських війн.</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 488px;">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Наслідки поразки Наполеона</h5>
+              <p class="card-text">Поразка під Ватерлоо означала поразку всієї кампанії, поразку Франції у війні з коаліцією. Вона призвела до повторного зречення престолу Наполеоном (22 червня), до зміни політичної влади у Франції, і надалі — до її окупації союзними арміями та відновлення влади Бурбонів.
+
+                Справжнім переможцем міг відчувати себе і банкір Натан Ротшильд. Він раніше за інших дізнався про перемогу союзників, але на Лондонській біржі був підкреслено сумний і лише продавав акції. Інші торгівці вирішили, що переміг Наполеон I, і теж кинулися збувати цінні папери, які з легкістю скуповували агенти Натана. За один цей день Ротшильди збагатилися на 100 мільйонів фунтів.</p>
+              <p class="card-text"><small class="text-body-secondary">1815</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        <script async="" src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+    
+    </body>
+
+    <div class="container px-4 py-5" id="featured-3">
+      <h2 class="pb-2 border-bottom">Бонапарти</h2>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+          </div>
+          <h3 class="fs-2 text-body-emphasis">Наполео́н I Бонапа́рт</h3>
+          <p>французький державний діяч, полководець, перший консул Французької Республіки (1799—1804), імператор Французів (1804—1814, 1815). Творець однієї з найбільших імперій світу, реформатор і законодавець Європи. Представник роду Бонапартів. Народився в Аяччо, Корсика, Франція. Схвально зустрів Французьку революцію, став дивізійним генералом революційної армії (з 1796). Командував французькими військами у війні проти Австрії та П'ємонту (1796—1797), засвідчивши талант великого воєначальника і політика. 1799 року здійснив державний переворот у Франції: полишив владу Директорії, став консулом. </p>
+          <a href="#" class="icon-link">
+          
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            
+          </div>
+          <h3 class="fs-2 text-body-emphasis"></h3>
+          <p></p>
+          <a href="#" class="icon-link">
+            
+          </a>
+        </div>
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+          </div>
+          <h3 class="fs-2 text-body-emphasis">Наполео́н ІІІ Бонапа́рт</h3>
+          <p> останній французький імператор з 1 грудня 1852 року до 4 вересня 1870 року (з 2 вересня 1870 року знаходився в полоні), Президент Французької республіки з 20 грудня 1848 року до 1 грудня 1852 року.
+
+            Племінник Наполеона I, після низки заколотів із метою захопити владу прийшов до неї мирним шляхом, як президент республіки (1848). Здійснивши переворот у 1851 році й усунувши законодавчу владу, шляхом «прямої демократії» (плебісцит) встановив авторитарний поліцейський режим. За рік проголосив себе імператором Другої імперії. Становлення Другої імперії зробило його владу абсолютною.</p>
+          <a href="#" class="icon-link">
+           
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">"Цитати"</h2>
+  
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">«Патріотизм – це найперша ознака цивілізованої людини, якість, яка відрізняє людину від раба.»</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                  <small>Earth</small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                  <small>3d</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">«Найбільш красномовний в світі оратор – це успіх.»</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                  <small>Pakistan</small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                  <small>4d</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">«У моєму словнику немає слова “неможливо”»</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                  <small>California</small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                  <small>5d</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <p class="col-md-4 mb-0 text-body-secondary">© 2023 Wikipedia, by q1dox</p>
+          
+              <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+          
+              <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="wikiuser" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">Features</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">About</a></li>
+              </ul>
+            </footer>
+          </div>
+    </div>
+  </main>
+  <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+      
+  
+  </body>
+  
+  
+  
+  </body></html>

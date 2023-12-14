@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<head>
+  <link rel="shortcut icon" type="x-icon" href="/static/cube.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <html lang="en" data-bs-theme="light"><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.118.2">
+        <title>Wiki</title>
+    
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    
+        
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+        <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    
+    
+        <style>
+    
+          html {
+            min-height: 100vh;
+            cursor: url("https://raw.githubusercontent.com/WebDevSimplified/Mix-Or-Match/master/Assets/Cursors/GhostHover.cur"), auto;
+          }
+
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+          }
+    
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+    
+          .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+          }
+    
+          .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+          }
+    
+          .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+          }
+    
+          .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+          }
+    
+          .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+    
+          .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+          }
+    
+          .bd-mode-toggle {
+            z-index: 1500;
+          }
+    
+          .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+          }
+
+          #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; 
+        }
+        </style>
+    
+        
+        <!-- Custom styles for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="blog.css" rel="stylesheet">
+   </style></head>
+      <body>
+
+        <div id="loader-wrapper">
+          <div class="loadingio-spinner-wedges-x4klbswvndr">
+            <img src="{{ url_for('static', filename='we.gif') }}" alt="Гифка">
+              <div id="spinner" class="ldio-baznh5xhdqt">
+                  <!-- Ваш код из style.css -->
+              </div>
+          </div>
+      </div>
+
+        <script>
+
+          window.addEventListener('load', function () {
+         
+              document.getElementById('loader-wrapper').style.display = 'none';
+           
+              document.getElementById('main-content').style.display = 'block';
+          });
+      </script>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+  
+    
+        
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+      </symbol>
+      <symbol id="cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+      </symbol>
+    </svg>
+    
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+
+          </div>
+          <div class="col-4 text-center">
+            <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Wikipedia</a>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" href="#" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+            </a>
+            <a class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="dashboard">
+              <img src="{{ url_for('static', filename='user.png') }}" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong> <mark>{{ user.name }}</mark></strong>
+            </a>
+            
+          </div>
+        </div>
+      </header>
+    
+      <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+          <a class="nav-item nav-link link-body-emphasis" href="wikiuser">World</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
+          <a class="nav-item nav-link link-body-emphasis active" href=""><mark>Politics</mark></a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+        </nav>
+      </div>
+    </div>
+    
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div class="col-lg-6 px-0">
+          <h1 class="display-4 fst-italic">Політики та політика</h1>
+          <p class="lead my-3">P.S - хочите дізнатися більше про автора? Прошу вас по ссилці внизу!</p>
+          <p class="lead mb-0"><a href="me1" class="text-body-emphasis fw-bold">About me...</a></p>
+        </div>
+      </div>
+    
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary-emphasis">Політичний діяч</strong>
+              <h3 class="mb-0">Франклін Делано Рузвельт</h3>
+              <div class="mb-1 text-body-secondary">4 березня 1933 — 12 квітня 1945</div>
+              <p class="card-text mb-auto">Президентські вибори 1932 року проходили 8 листопада 1932 року. Ще продовжувалась «Велика депресія», яка шаленіла до 1933 року. Разом з економікою страждала також і репутація президента Герберта Гувера. На настрої виборців впливала і все ще чинна заборона на спиртні напої в США, що отримала назву «Сухого закону». Демократ Франклін Рузвельт побачив в цьому можливість свого успіху на майбутніх президентських виборах, обіцяючи політику реформ, відому як «Новий курс»...</p>
+              <a href="Roosevelt" class="icon-link gap-1 icon-link-hover stretched-link">
+                Continue reading
+                <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="/static/Fr.jpg" alt="Placeholder: Thumbnail" role="img" aria-label="Placeholder: Thumbnail">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis">Політичний діяч</strong>
+              <h3 class="mb-0">Джон Фіцджеральд Кеннеді</h3>
+              <div class="mb-1 text-body-secondary">20 січня 1961 — 22 листопада 1963</div>
+              <p class="mb-auto">Програма «Аполлон» була задумана на початку 1960 року ще за часів адміністрації Ейзенхауера як продовження космічної програми «Меркурій». У той час, коли НАСА знаходилась у фазі активного складання майбутньої програми, її фінансування ще не було затвердженим через опозицію у владних колах. Із приходом до влади Кеннеді, його радники заявили про надзвичайну дорожнечу реалізації проєкту польоту людини на Місяць, але Кеннеді відклав розв'язання питання...</p>
+              <a href="Kenedy" class="icon-link gap-1 icon-link-hover stretched-link">
+                Continue reading
+                <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="/static/Jk.jpg" alt="Placeholder: Thumbnail" role="img" aria-label="Placeholder: Thumbnail">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            Політика
+          </h3>
+    
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Які види політики існує?</h2>
+            <p class="blog-post-meta">2/11/2023 <a href="https://uk.wikipedia.org/wiki/Політика">Original Wikipedia</a></p>
+    
+            <p>Полі́тика (від грец. πολιτική — діяльність самоуправління у полісі (місті-державі), а надалі — «мистецтво управління» державою і суспільством) — діяльність з вирішення питань життя суспільства чи певної його частини.</p>
+            <hr>
+            <p>У широкому розумінні політика — визначена частина, програма або напрям такої діяльності, сукупність засобів (інструментів) та методів для реалізації певних стратегічних інтересів задля досягнення визначених (суб'єктом політичного процесу) цілей в певному соціальному середовищі. Політикою позначають процес прийняття рішень, а також поведінку в суспільно-державних установах. У демократичних суспільствах політику можна спостерігати у взаємодії між певними групами людей у корпоративних, академічних, релігійних інституціях з основою демократичної форми влади та певної політекономічної системи країни.</p>
+            <h2>Історія поняття</h2>
+            <p>--------------------</p>
+            <blockquote class="blockquote">
+
+            </blockquote>
+            <p>Термін «політика» поширився під впливом однойменного трактату Арістотеля — «Політика», змістом якого є узагальнення проблем розвитку давньогрецьких держав, правлінь і урядів.В античну добу політику розглядали як одну з провідних сфер діяльності, що визначає статус індивіда, можливість утвердити свої сили та розум і ґрунтується переважно на двох принципах: волі та традиції. Політика визначалася як тотальний процес, жити в суспільстві означало жити обов'язково політично, оскільки політика виступала як всезагальна форма соціальних зв'язків.У Середньовіччя політику трактували як вияв волі і дії Бога (Фома Аквінський, Августин). З початком епохи Відродження політику починають трактувати як категорію, що пов'язана з діями людини, боротьбу між силою і законом. Якщо недостатньо дії закону, його може замінити або доповнити сила. Самі закони тільки тоді чогось варті, коли спираються на внутрішню силу підпорядкування їм і силу зовнішньої організації такого підпорядкування. У Новий час Томас Гоббс, Джон Лок, Шарль Луї де Монтеск'є визначають політику як стосунки з утвердження людської свободи за рахунок права, розуму, моралі. У 19 столітті політику визначають як мистецтво використання можливостей.
+
+              
+            </p>
+            <h3>Сутність політики</h3>
+            <p>Розмірковуючи про політику, найчастіше ведуть мову про владу одного класу над іншим, однієї соціальної групи над іншими, однієї особистості над масою тощо. Ядром політики є боротьба за завоювання, утримання і використання влади, водночас політична влада є реальною здатністю соціальних сил реалізувати свої специфічні об'єктивні інтереси, проводити свою волю в політиці й правових нормах. Таким чином, політика — сфера владних відносин:</p>
+            <ul>
+              <li>«Політика в будь-якому суспільстві, на будь-яких історичних етапах його розвитку стає засобом забезпечення насамперед власних інтересів індивіда чи великих груп людей: станів, територіальних одиниць, класів і націй. Метою політики як усвідомленої діяльності є націленість на забезпечення оптимально можливого в даному суспільстві й конкретних умовах здійснення суспільних процесів, вивчення їх та регулювання і розвиток у тому напрямі, якого бажає домінуюча чи опозиційна група. Політика — це реалізація певної мети переважно через відносини протиборства (не обов'язково революційності, адже політичний компроміс, наприклад, — також подолання, подолання власних амбіцій однією з сил, подолання нетерпимості до їнших)."</li>
+     
+            </ul>
+            <p>Структура політики</p>
+            <ol>
+              <li>політичні відносини, що відображають стійкий характер взаємозв'язків суспільних груп між собою і з інститутами влади; взаємозв'язки соціальних суб'єктів, у яких виражаються їхні інтереси та здійснюється політична діяльність. Формою політичних відносин можуть бути: вибори, референдуми, мітинги, зібрання, пікети, страйки, політичні перемовини тощо.</li>
+              <li>політичну свідомість, яка характеризує залежність політичного життя від усвідомленого ставлення людей до своїх інтересів.</li>
+              <li>політичний інтерес, що є внутрішнім, усвідомленим джерелом політичної поведінки, яке спонукає людей до постановки певних політичних цілей і до дій, направлених на втілення цих цілей у життя.</li>
+              <li>політична діяльність суб'єктів політики; суб'єктами політики виступають переважно: держава, політичні партії, громадські організації, або ж політичний індивід, дії якого чітко окреслені законами та моральними нормами; іноді і соціальні інститути, які покликані виконувати переважно неполітичні завдання, нерідко справляють досить суттєвий вплив на політику: церква, університети, асоціації тощо.</li>
+              <li>політичний процес як сукупність видів діяльності суб'єктів політики, які охоплюють усі стадії функціонування політичної системи і спрямовані на досягнення політичних цілей.</li>
+              <li>політична організація, що відображає роль інститутів публічної влади як центрів управління системними процесами. Це сукупність органів законодавчої, виконавчої і судової влади, партійних і громадських організацій, груп тиску, що представляють політичні інтереси різних верств суспільства в цілому, становлять організаційний кістяк політики[22]. Політична організація концентрує владне волевиявлення народу, включаючи прийняття і організацію управлінського рішення, задаючи тим самим певну спрямованість всьому політичному процесу.</li>
+            </ol>
+            <h2>Функції політики:</h2>
+            <dl>
+              <dt>У політології існують різні погляди на функції політики. Талкотт Парсонс відносить до них визначення колективної мети суспільного розвитку, мобілізацію і прийняття рішень, збереження стабільності в суспільстві і розподіл ресурсів. Французький політолог Режіс Дебре вбачав функції політики у збереженні цілісності і стабільності суспільства; Девід Істон — в авторитарному привласненні цінностей.</dt>
+              <p>У вітчизняній політології виділяють такі функції політики:</p>
+              <ol>
+                <li>керівництво та управління суспільством, збереження організованості й загального порядку;</li>
+                <li>забезпечення захисту основних прав людини;</li>
+                <li>управлінська (політичне керівництво суспільством);</li>
+                <li>інтегруюча, що забезпечує консолідацію суспільства, досягнення стабільності суспільства в цілому і складових його частин, систем;</li>
+                <li>регулятивна, що сприяє упорядкуванню, регламентації політичної поведінки та політичних відносин;</li>
+                <li>теоретико-прогностичну, мета якої — вироблення концепції, курсу розвитку суспільства;</li>
+                <li>сприяння виявленню інтересів різних груп суспільства та узгодження цих інтересів;</li>
+                <li>нормативна, пов'язана з виробленням і затвердженням системи норм і цінностей у суспільстві;</li>
+                <li>соціалізації особистості — функція залучення, включення індивіда в суспільне життя, певне політичне середовище;</li>
+                <li>забезпечення суспільства дієвим принципом розподільчої справедливості;</li>
+                <li>забезпечення наступності та інноваційності соціального розвитку як суспільства в цілому, так і окремої особи;</li>
+                <li>гарантування як усередині самої держави, так і поза її межами безпеки для всіх груп і верств суспільства.</li>
+                <li>сприяння виявленню інтересів різних груп суспільства та узгодження цих інтересів;</li>
+
+              </ol>
+              <dt>Водночас політиці властиві й латентні функції. Американський соціолог, нобелівський лауреат, Роберт Кінг Мертон вважав, що у конкретному суспільстві окремі функції можуть бути нерозвиненими, за характером здійснення основних функцій можна визначити зрілість політичного життя суспільства і держави.</dt>
+              <dd>Політоло́гія, або політична наука (англ. political science, фр. sciences politiques; від (грец. πολιτικός, politikos — суспільний, громадський, грец. πόλις, polis — місто, politika  — державні й суспільні справи), — соціально-гуманітарна наука про політику, її роль і функції в житті суспільства, зокрема, про її теорію; функції політичної системи та влади; функції і характер держави; сутність, форми та методи діяльності суб'єктів політики та закономірності і випадковості розвитку політичного процесу; про проблеми глобальної політики, зокрема, міжнародних відносин.</dd>
+            </dl>
+            <h2>Види політики</h2>
+            <p>У результаті політичної боротьби різних партій, угруповань, рухів у державі складається законодавчо затверджена державна політика. Це система пріоритетів на напрямків діяльності, що, принаймні теоретично, відповідають інтересам держави та народу. Державну (публічну) політику визначають як «систему дій, регулятивних заходів, законів, і фінансових пріоритетів з того чи іншого напрямку, проголошену органом державної влади або його представниками». Державна (публічна) політика зазвичай втілюється в «конституціях, законодавчих актах і судових рішеннях».</p>
+            <ul>
+              <li><strong>У цій системі розрізняють політику внутрішню і зовнішню. Внутрішня політика охоплює основні напрямки діяльності держави, її структур і органів державної влади з регулювання взаємодії людей усередині країни.</strong></li>
+              <li><em>Зовнішня політика — діяльність держави на міжнародній арені, що регулює її стосунки з іншими суб'єктами зовнішньополітичної діяльності: державами, зарубіжними партіями, іншими громадськими об'єднаннями, міжнародними організаціями. Зовнішньополітичний курс будь-якої держави визначається, головним чином, характером її внутрішньої політики, і в водночас істотно впливає на внутрішню політику. Зрештою і внутрішня, і зовнішня політика вирішують одну задачу — збереження і зміцнення існуючої в державі системи суспільних відносин.</em></li>
+              <li>За пріоритетами політика поділяється на нейтральну, відкритих дверей, національного примирення, компромісів; за змістом і характером — на прогресивну і реакційну, на науково обґрунтовану і волюнтаристичну тощо.</li>
+              <li><del>Внутрішня політика — політика, що проводиться в межах держави. Охоплює економіку, політичні партії, вибори президента і парламенту.
+
+                Внутрішня політика направлена на забезпечення прав і свобод громадян, соціальний захист населення, розвиток гуманітарної сфери, декриміналізацію економіки, реалізацію заходів щодо зміцнення обороноздатності і національної безпеки, охорони громадського порядку, боротьби із злочинністю тощо.
+                
+                За Конституцією України внутрішня політика покладена на Кабінет Міністрів України. Засади внутрішньої політики викладені у Конституції України, законах України, відповідають міжнародним угодам України.</del> </li>
+            </ul>
+            <p>Це інформація щодо політики</p>
+            <h2>Економічні дослідження політики</h2>
+            <p>Одним з відомих дослідників політики з точки зору економіки є Джеймс Б'юкенен, який, зокрема, так описує політику:
+
+            </p>
+            <h3></h3>
+            <p>Політика є складною системою обмінів між індивідами, в якій останні колективно прагнуть до досягнення своїх приватних цілей, так як не можуть реалізувати їх шляхом звичайного ринкового обміну. Тут немає інших інтересів, окрім індивідуальних. На ринку люди обмінюють яблука на апельсини, а в політиці – погоджуються платити податки в обмін на блага, необхідні всім і кожному: від місцевої пожежної охорони – до суду.</p>
+            <pre><code>Полі́тик — особа, яка цілеспрямовано веде політичну діяльність або впливає на політику, обіймає чи прагне до певної громадської посади. Здебільшого, нині політиків обирають виборці; на відміну від політиків, чиновників призначають.</code></pre>
+            <p>---------------------------------------------</p>
+          </article>
+    
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Статус</h2>
+            <p class="blog-post-meta">2/11/2023 <a href="https://uk.wikipedia.org/wiki/Політика">Original Wikipedia</a></p>
+    
+            <p>Політики можуть належати до виконавчої влади (особливо вища посадова особа, наприклад президент, мер), судової влади (скажімо посади мирового судді чи окружного прокурора у США), але більшість політиків належить до законодавчої влади (члени парламентів, міських рад). Єдиним органом законодавчої влади в Україні є парламент — Верховна Рада України. </p>
+            <blockquote>
+              <p>Через те, що більшість політиків обіймають виборні посади, вони проводять<strong> передвиборчі кампанії</strong> заради переконання людей віддати за них власні голоси.</p>
+            </blockquote>
+            <p>Переважно, політики є членами політичних партій.</p>
+            <h3>Таблиця Найкращих політиків</h3>
+            <p>інформація за 2018 рік</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Politicans</th>
+                  <th>Age</th>
+                  <th>years of governing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sir Winston Leonard Spencer Churchill</td>
+                  <td>90</td>
+                  <td>May 10, 1940 - July 26, 1945</td>
+                </tr>
+                <tr>
+                  <td>Franklin Delano Roosevelt</td>
+                  <td>63</td>
+                  <td>March 4, 1933 - April 12, 1945</td>
+                </tr>
+                <tr>
+                  <td>John Fitzgerald Kennedy</td>
+                  <td>46</td>
+                  <td>January 20, 1961 - November 22, 1963</td>
+                </tr>
+              </tbody>
+              <tfoot>
+            
+              </tfoot>
+            </table>
+    
+            <p>--------------</p>
+          </article>
+    
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Дума пралісу</h2>
+            <p class="blog-post-meta">2/11/2023 <a href="https://uk.wikipedia.org/wiki/Політика">Original Wikipedia</a></p>
+    
+            <p>"Дума пралісу" — памфлет знаного вітчизняного письменника Осипа Турянського, 1921 рік. Сповідь перед судом Сатани, збірного образу українського політика, який емігрував на захід в час, коли на початку 20 століття по завершенню Першої світової війни після розвалу імперій, могла постати потужна українська держава за зразком Чехословаччини, Польщі, Фінляндії та інших:</p>
+            <ul>
+              <li>"Найбільший злочинець, це та людина, що видерла з душі народу віру в себе, у власну силу й у власну боротьбу на шляху до сонця. А мені вдалося защепити в душу мого народу їдь сумніву та зневіри. Ця зневіра лягла зморою на мій народ і бичуватиме навіть його майбутні покоління. Отруту сумніву і зневіри будуть навіть діти мого народу висисати з молоком із материних грудей. Ось чому я найбільший злочинець! Ось чому я отримаю найвищу пекельну нагороду!"</li>
+              <li>"Все королівське військо" — (англ. All the King’s Men) — роман видатного американського письменника Роберта Пенна Воррена, виданий 1946 року, про політика який часто не гидує ніякими засобами для досягнення власної мети.</li>
+              
+            </ul>
+            <p>-----------------------</p>
+          </article>
+    
+    
+        </div>
+    
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-body-tertiary rounded">
+              <h4 class="fst-italic">About</h4>
+              <p class="mb-0"><em>Текст був взятий у вільній бібліотеці під назвою Wikipedia. Читаючи це, ви погоджуєшся з нашими правилами користування сайтом. А ось, ви можете прослухати спіч різних політичних діячів. P.S - автор засуджує усі прояви нацизму та комунізму та засуджує іх поширення </em></p>
+              <audio controls>
+                <source src="{{ random_audio }}" type="audio/mpeg">
+                Ваш браузер не підтримує елемент audio.
+              </audio>
+            </div>
+    
+            <div>
+              <h4 class="fst-italic">Recent posts</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="OUN">
+                    <img class="bd-placeholder-img" width="100%" height="96" src="/static/OUN.jpg" alt="">
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">ООН - Організація Об'єднаних Націй</h6>
+                      <small class="text-body-secondary">October 24, 1945</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="finlandia">
+                    <img class="bd-placeholder-img" width="100%" height="96" src="/static/fin.jpg" alt="">
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">Країна щастя - Фінляндія</h6>
+                      <small class="text-body-secondary">December 6, 1917.</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="sla">
+                    <img class="bd-placeholder-img" width="100%" height="96" src="/static/sla.jpeg" alt="">
+
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">Слов'янське язичництво</h6>
+                      <small class="text-body-secondary">VII ст.</small>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="p-4">
+              <h4 class="fst-italic">Архів</h4>
+              <ol class="list-unstyled mb-0">
+                <li><a href="https://uk.wikipedia.org/wiki/Політика">Wikipedia</a></li>
+              </ol>
+            </div>
+    
+            <div class="p-4">
+              <h4 class="fst-italic">Соц.Мережі</h4>
+              <ol class="list-unstyled">
+                <li><a href="404">Telegram</a></li>
+                <li><a href="404">Discord</a></li>
+                
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+    </main>
+    
+   
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <body>
+
+    
+    
+    
+        
+    
+    <main>
+    
+      <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        </div>
+      
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>One more for good measure.</h1>
+                <p>Some representative placeholder content for the third slide of this carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+    
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+    
+      <div class="container marketing">
+    
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/static/vil.jpg" alt="Placeholder" role="img" aria-label="Placeholder">
+
+            <h2 class="fw-normal">Вільгельм II</h2>
+            <p>Вільге́льм II (нім. Wilhelm II.; 27 січня 1859 — 4 червня 1941) — останній німецький імператор і прусський король (1888–1918). Представник німецької династії Гогенцоллернів. Народився в Берліні, Пруссія. Син Фрідріха III. З 1890 року вів активну зовнішню політику за переділ колоній. Разом з іншими європейськими монархами сприяв розв'язанню Першої світової війни. Зрікся престолу внаслідок Революції (1918), яка повалила німецьку монархію.</p>
+            <p><a class="btn btn-secondary" href="vilgelm">Дізнатися більше »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/static/kastro1.jpg" alt="Placeholder" role="img" aria-label="Placeholder">
+            <h2 class="fw-normal">Ернесто Че Гевара</h2>
+            <p>Ерне́сто Гева́ра (ісп. Ernesto Guevara), також відомий під прізвиськом Че (ісп. Che; 14 червня 1928, Росаіро, Санта-Фе, Аргентина — 9 жовтня 1967, Ла-Ігера, Болівія) — латиноамериканський марксистський революціонер, публіцист, партизан-підпільник; після приходу до влади директор центральної політичної в'язниці в Гавані, міністр промисловості та голова Нацбанку. Один із лідерів Кубинської революції 1959 року. На Кубі був другою людиною для Фіделя Кастро після його брата Рауля.</p>
+            <p><a class="btn btn-secondary" href="che">Дізнатися більше »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/static/me.jpg" alt="Placeholder" role="img" aria-label="Placeholder">
+            <h2 class="fw-normal">Мельник Андрій Атанасович</h2>
+            <p>Андрі́й Атанасович Ме́льник (12 грудня 1890, Воля Якубова, Дрогобицький повіт, Королівство Галичини та Володимирії, Австро-Угорщина, нині Дрогобицький район, Львівська область, Україна — 1 листопада 1964, Кельн, ФРН) — український державний, військовий та політичний діяч. Полковник армії УНР, Голова Проводу Українських Націоналістів, другий голова ОУН (1938–1964). Один з найближчих соратників полковника та засновника ОУН Євгена Коновальця.</p>
+            <p><a class="btn btn-secondary" href="mel">Дізнатися більше »</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    
+    
+        <!-- START THE FEATURETTES -->
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Демократія <span class="text-body-secondary"> VII ст. до н. е.</span></h2>
+            <p class="lead">Демократія виникла у Стародавній Греції, стародавні греки були також першими дослідниками її феномену. Крім того, в Елладі був поширений такий поділ держав за формами правління: «один керівник» (монархія), «перший, найкращий, здатний + сила, влада» (аристократія) і «народне правління» (демократія). Однак, у Стародавній Греції (так само як і у Стародавньому Римі) рабів і чужоземців не вважали громадянами — демосу.
+
+              Деякі середньовічні держави називали демократичними, адже влада належала народу (виборність влади), але при цьому певну, досить велику, частину суспільства не вважали народом, представники цієї решти не мали права голосу. Тому деякі дослідники вживають такі терміни, як рабовласницька демократія (до якої належить і Афінська демократія), феодальна демократія, буржуазна демократія, соціалістична демократія тощо.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/static/de.png" alt="Placeholder: 500x500" role="img" aria-label="Placeholder">
+
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Консерватизм<span class="text-body-secondary"> 1818 р.</span></h2>
+            <p class="lead">Консервати́зм (фр. conservatisme, від лат. conservo — «охороняю», «зберігаю») — визначення ідейно-політичних, ідеологічних і культурних течій, що спираються на ідею традиції та спадкоємність у соціальному та культурному житті. Для консерватизму характерні прихильність до усталених соціальних систем і норм, «скептичне» сприйняття ідей соціальної рівності, неприйняття революцій та радикальних реформ, обстоювання еволюційного органічного, максимально поміркованого розвитку. Ідеологічно консерватизм протистоїть як лібералізму, так і соціалізму.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/static/kon.jpeg" alt="Placeholder: 500x500" role="img" aria-label="Placeholder">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Соціал-демократія <span class="text-body-secondary">Наприкінці XIX — початку XX ст.</span></h2>
+            <p class="lead">До Першої світової війни «соціал-демократами» називали всіх послідовників лівої ідеології поза анархізму — як марксистів, так і послідовників Ф. Лассаля та інших різновидів реформістського соціалізму. Таким чином, ця категорія об'єднувала і радикальних революціонерів — В. І. Леніна і Р. Люксембург, і помірних еволюціоністів типу Е. Бернштейна, і ортодоксальний «центр» типу К. Каутського.
+
+              Ідеологія сучасної соціал-демократії знаходиться трохи лівіше соціал-лібералізму і трохи правіше демократичного соціалізму. На відміну від демосоціалістів, соціал-демократи не наполягають на необхідності примусової націоналізації засобів виробництва. На відміну від соціал-лібералів — вважають, що в основі суспільного устрою, все-таки повинна превалювати соціалістична, а не капіталістична орієнтація.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/static/soc.jpg" alt="Placeholder: 500x500" role="img" aria-label="Placeholder">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <!-- /END THE FEATURETTES -->
+    
+      </div><!-- /.container -->
+    
+    
+
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        
+    
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+   
+    
+        
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+            <span class="fs-4">Wiki.Shorts</span>
+          </a>
+        </header>
+    
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">«Джон Кеннеді»</h1>
+            <p class="col-md-8 fs-4">Ми не боїмося довірити американському народу неприємні факти, іноземні ідеї, чужі філософії та конкурентні цінності. Бо нація, яка боїться дозволити своєму народові судити правду та брехню на відкритому ринку, - це нація, яка боїться свого народу.</p>
+            <a href="quotes" class="btn btn-primary btn-lg" role="button"></a>
+
+          </div>
+        </div>
+    
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+              <h2>«Генрі Девід Торо»</h2>
+              <p>Кращий той уряд, який править менше.</p>
+              <a href="quotes" class="btn btn-outline-light" type="button"></a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+              <h2>«Конфу́цій»</h2>
+              <p>У країні, де є порядок, будь сміливий і в діях, і в промовах. У країні, де немає порядку, будь сміливий у діях, але обачний в промовах.</p>
+              <a href="quotes" class="btn btn-outline-secondary" role="button"></a>
+
+            </div>
+          </div>
+        </div>
+    
+
+      </div>
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        
+    
+    <div class="container px-4 py-5" id="custom-cards">
+
+    
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"> Якщо хочеш перемогти весь світ, переможи себе.</h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>Достоєвський Федір Михайлович
+                    </small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+  
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Великі видаються нам великими лише тому, що ми самі стоїмо на колінах.</h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>Карл Маркс</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">	
+                  Немає людської душі, яка встоїть перед спокусою влади.  </h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>Платон</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+      <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+   
+    
+        
+    <main class="container py-5">
+      <h1>Нюрнберзький процес</h1>
+      <p class="lead">Ню́рнберзький проце́с — міжнародний судовий процес, який проводився альянтами проти представників<a href="https://uk.wikipedia.org/wiki/Третій_Рейх"> Третього Рейху </a>  за підготовку та здійснення вторгнень в інші країни та інші злочини під час Другої світової війни.</p>
+    
+      <p>Ця стаття про Міжнародний військовий трибунал у Нюрнберзі в 1946 році. </p>
+    
+      <pre><code>
+    &lt; Між 1939 і 1945 роками нацистська Німеччина захопила багато країн Європи, у результаті спричинила 27 мільйонів смертей лише в Радянському Союзі. Пропозиції щодо того, як покарати переможених нацистських лідерів, варіювалися від показового суду (Радянський Союз) до розстрілів без судочинства (Велика Британія). У 1945 році Велика Британія, Радянський Союз, Сполучені Штати та Франція домовилися скликати в Нюрнберзі спільний суд, юридичним документом якого стала Нюрнберзька хартія. У період із 20 листопада 1945 року до 1 жовтня 1946 року Міжнародний військовий трибунал (МВТ) судив 21 найважливішого з живих керівників нацистської Німеччини в політичній, військовій та економічній сферах, а також шість німецьких організацій. Метою процесу було не лише засудити підсудних, а й зібрати незаперечні докази злочинів нацистів, подати урок історії переможеним німцям та делегітимізувати традиційну німецьку еліту. &gt;
+      </code></pre>
+    
+      <p>Домовленість про створення Міжнародного військового трибуналу і його статуту були опрацьовані СРСР, США, Великою Британією та Францією в ході лондонської конференції <code> 26 червня — 8 серпня 1945.</code> Спільно розроблений документ відобразив позицію всіх 23 країн-учасниць конференції, принципи статуту затверджені Генеральною Асамблеєю ООН.
+
+        29 серпня опубліковано перший список головних воєнних злочинців — 24 нацистських політиків, військових, ідеологів нацизму. </p>
+    
+      <hr class="my-5">
+    
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 690px;">
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/nur.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+
+            <div class="card-body">
+              <h5 class="card-title">Вирок</h5>
+              <p class="card-text">Міжнародний військовий трибунал засудив:
+
+                До смертної кари через повішення: Герінга, Ріббентропа, Кейтеля, Кальтенбруннера, Розенберга, Франка, Фріка, Штрайхера, Заукеля, Зейсс-Інкварта, Бормана (заочно), Йодля.
+                До довічного ув'язнення: Гесса, Функа, Редера.
+                До 20 років тюремного ув'язнення: Шираха, Шпеера.
+                До 15 років тюремного ув'язнення: Нейрата.
+                До 10 років тюремного ув'язнення: Дьониця.
+                Виправдані: Фріче, Папен, Шахт.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+          <div class="card p-3">
+            <figure class="p-3 mb-0">
+              <blockquote class="blockquote">
+                <p>Хід процесу</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                 <cite title="Source Title">By Wikipedia</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/nur2.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+            <div class="card-body">
+              <h5 class="card-title">Наступні Нюрнберзькі процеси</h5>
+              <p class="card-text">На відміну від головного процесу, ці справи слухав не Міжнародний військовий трибунал, що представляв усіх 4 союзників, а "Нюрнберзький військовий трибунал ", створений лише військовим командуванням США згідно з правом, даним Контрольною комісією всім союзникам самостійно судити нацистів у межах своєї окупаційної зони (Нюрнберг входив до американської зони). Відповідно справи формулювалися у вигляді «Сполучені Штати проти…», а прокурори та слідчі також були американцями. Слухання з усіх справ відбувалися у тому самому Нюрнберзькому палаці правосуддя, як і головний процес.</p>
+              <p class="card-text"><small class="text-body-secondary">1945</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 171px;">
+          <div class="card text-bg-primary text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>Продовження вироку</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-white">
+              <cite title="Source Title">Йодля було посмертно повністю виправдано, але під тиском громадськості виправдання було скасоване.
+
+                Трибунал визнав організації СС, СД, СА, Гестапо такими, що мають за мету злочинну діяльність. Членів цих організацій, які усвідомлювали злочинність дій (та певними іншими ознаками), а також керівний склад нацистської партії визнано злочинцями.
+                
+                Ряд засуджених подали прохання: Герінг, Гесс, Ріббентроп, Заукель, Йодль, Кейтель, Зейсс-Інкварт, Функ, Деніц і Нейрат — про помилування; Редер — про заміну пожиттєвого ув'язнення на смертний вирок; Герінг, Йодль і Кейтель — про заміну повішання на розстріл, якщо прохання про помилування не задовольнять. Всі ці клопотання були відхилені.
+                
+                Страти відбулися в ніч на 16 жовтня 1946 у будинку Нюрнберзької в'язниці. Герінг отруївся незадовго до страти.
+                
+                Суди над військовими злочинцями меншої величини продовжувалися у Нюрнберзі аж до 1950-х.</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 310px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Підсумки та помилування</h5>
+              <p class="card-text">Загалом перед цими 12 процесами постало 185 обвинувачених, з яких 142 визнані винними. 24 засуджено до страти (помилувано 11, страчено 13), 20 — до довічного ув'язнення, 98 — до різних термінів, 35 — виправдано. Іншим 8 обвинуваченим вироки не були винесені з різних причин (визнані неосудними, за медичними показниками, померли до суду).
+
+                У 1951 багато засуджені цих процесах зазнали амністії чи його терміни були значно скорочені.</p>
+              <p class="card-text"><small class="text-body-secondary">1419—1507</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 362px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/nur3.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 378px;">
+          <div class="card p-3 text-end">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>Музей</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+              <cite title="Source Title">Сьогодні зал засідань («Зал 600»), де проходили нюрнберзькі процеси, є звичайним робочим приміщенням нюрнберзького земельного суду (адреса: Bärenschanzstraße 72, Nürnberg). Однак у вихідні у ньому проводяться екскурсії (з 13 до 16 годин). Крім того, у документаційному центрі історії нацистських з'їздів у Нюрнберзі є спеціальна експозиція, присвячена нюрнберзьким процесам. </cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 488px;">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Дванадцять процесів</h5>
+              <p class="card-text">Процеси організовувалися відповідно до професійної та організаційної приналежності групи підсудних. Найвідомішим є суд над нацистськими лікарями ; увагу привернув також незвичайний у світовій історії суд, підсудними якого стали нацистські судді.</p>
+              <p class="card-text"><small class="text-body-secondary">1494</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        <script async="" src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+    
+ 
+
+
+        <body>
+            <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+              <symbol id="check2" viewBox="0 0 16 16">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+              </symbol>
+              <symbol id="circle-half" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+              </symbol>
+              <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+                <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+              </symbol>
+              <symbol id="sun-fill" viewBox="0 0 16 16">
+                <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+              </symbol>
+            </svg>
+        
+        
+            
+        <header data-bs-theme="dark">
+          <div class="collapse text-bg-dark" id="navbarHeader">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                  <h4>About</h4>
+                  <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                  <h4>Contact</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                    <li><a href="#" class="text-white">Like on Facebook</a></li>
+                    <li><a href="#" class="text-white">Email me</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </header>
+        
+        <main>
+        
+       
+        
+          <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/racca.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    
+                    <div class="card-body">
+                      <p class="card-text">Рассова теорія диктатора </p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1939-1945</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/galichina.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Армія Галиччини</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1940-х</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/upa.mp4" type="video/mp4">
+                      Errorо.
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">УПА</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1942</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/mahno.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Махно та анархія</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1917-х</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/petlura.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Петлюра</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1919-1921</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/bandera.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Бандера</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1942</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/gre.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">"Велика депресія"</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1929-1939</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/731.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">КОНЦТАБІР "731"</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1935-1945</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/vie.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Війна у Вьетнамі</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1955-1975</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </main>
+    
+        <main class="container">
+   
+        
+          <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 class="border-bottom pb-2 mb-0 d-flex justify-content-between">Commentaries <span class="float-end"><a href="commentaries">See Full</a></span></h6>
+            <div class="d-flex text-body-secondary pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+              <p class="pb-3 mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark">@Artem</strong>
+                Інформація з джерел, немає ніякої креативності у написанні статі.
+              </p>
+            </div>
+            <div class="d-flex text-body-secondary pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+              <p class="pb-3 mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark">@markus101</strong>
+                Чому описана тільки верхівка політики?
+              </p>
+            </div>
+            <div class="d-flex text-body-secondary pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+              <p class="pb-3 mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark">@bond_007</strong>
+                Деякі теми лишні, але що маємо то моємо.
+              </p>
+            </div>
+          </div>
+        
+
+          </div>
+        </main>       
+        
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <p class="col-md-4 mb-0 text-body-secondary">© 2023 Wikipedia, by q1dox</p>
+          
+              <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+          
+              <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">Features</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">About</a></li>
+              </ul>
+            </footer>
+          </div>
+</body>
+    
+    
+</html>

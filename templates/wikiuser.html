@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<head>
+  <link rel="shortcut icon" type="x-icon" href="/static/cube.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <html lang="en" data-bs-theme="light"><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.118.2">
+        <title>Wiki</title>
+    
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    
+        
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+        <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    
+    
+        <style>
+          html {
+            min-height: 100vh;
+            cursor: url("https://raw.githubusercontent.com/WebDevSimplified/Mix-Or-Match/master/Assets/Cursors/GhostHover.cur"), auto;
+          }
+
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+          }
+    
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+    
+          .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+          }
+    
+          .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+          }
+    
+          .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+          }
+    
+          .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+          }
+    
+          .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+    
+          .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+          }
+    
+          .bd-mode-toggle {
+            z-index: 1500;
+          }
+    
+          .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+          }
+
+          #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff; /* Цвет фона можете настроить по своему усмотрению */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Убедитесь, что z-index достаточно высокий, чтобы анимация была поверх всего остального */
+        }
+        </style>
+    
+        
+        <!-- Custom styles for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="blog.css" rel="stylesheet">
+   </style></head>
+      <body>
+
+        <div id="loader-wrapper">
+          <div class="loadingio-spinner-wedges-x4klbswvndr">
+            <img src="{{ url_for('static', filename='we.gif') }}" alt="Гифка">
+              <div id="spinner" class="ldio-baznh5xhdqt">
+                  <!-- Ваш код из style.css -->
+              </div>
+          </div>
+      </div>
+
+        <script>
+
+          window.addEventListener('load', function () {
+         
+              document.getElementById('loader-wrapper').style.display = 'none';
+           
+              document.getElementById('main-content').style.display = 'block';
+          });
+      </script>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+  
+    
+        
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+      </symbol>
+      <symbol id="cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+      </symbol>
+    </svg>
+    
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+
+          </div>
+          <div class="col-4 text-center">
+            <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Wikipedia</a>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" href="#" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+            </a>
+            <a class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="dashboard">
+              <img src="{{ url_for('static', filename='user.png') }}" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong> <mark>{{ user.name }}</mark></strong>
+            </a>
+            
+          </div>
+        </div>
+      </header>
+    
+      <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+          <a class="nav-item nav-link link-body-emphasis active" href="#"><mark>World</mark></a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
+          <a class="nav-item nav-link link-body-emphasis" href="wikiuser1">Politics</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+        </nav>
+      </div>
+    </div>
+    
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div class="col-lg-6 px-0">
+          <h1 class="display-4 fst-italic">Світові війні</h1>
+          <p class="lead my-3">P.S - хочите дізнатися більше про автора? Прошу вас по ссильці внизу!</p>
+          <p class="lead mb-0"><a href="me" class="text-body-emphasis fw-bold">About me...</a></p>
+        </div>
+      </div>
+    
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary-emphasis">Подія Наполеоновських Війн</strong>
+              <h3 class="mb-0">Битва під Ватерлоо</h3>
+              <div class="mb-1 text-body-secondary">	18 червня 1815</div>
+              <p class="card-text mb-auto">Битва під Ватерлоо — вирішальний бій, що відбувся 18 червня 1815 року і став остаточною поразкою Наполеона І. Французька армія під командуванням...</p>
+              <a href="napoleonwars" class="icon-link gap-1 icon-link-hover stretched-link">
+                Continue reading
+                <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="/static/Vat.jpg" alt="Placeholder: Thumbnail" role="img" aria-label="Placeholder: Thumbnail">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis">Подія 1618-хх</strong>
+              <h3 class="mb-0"> Похід Сагайдачного на Москву</h3>
+              <div class="mb-1 text-body-secondary">1617—1618</div>
+              <p class="mb-auto">Похід королевича Польського і царя Московського Владислава на Москву — військовий конфлікт між Річчю Посполитою, Військом Запорозьким та Московським царством, який тривав з 1617 по 1618 рік. Під час цього конфлікту коронне та литовське військо...</p>
+              <a href="1618" class="icon-link gap-1 icon-link-hover stretched-link">
+                Continue reading
+                <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" src="/static/Sag.jpg" alt="Placeholder: Thumbnail" role="img" aria-label="Placeholder: Thumbnail">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            Війна
+          </h3>
+    
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Що таке війна? Які є види її?</h2>
+            <p class="blog-post-meta">2/11/2023 <a href="https://uk.wikipedia.org/wiki/Війна">Original Wikipedia</a></p>
+    
+            <p>Війна́ — сукупність дій, спрямованих на захоплення чужих природних, енергетичних та людських ресурсів.</p>
+            <hr>
+            <p>Інакше, війна — це організований конфлікт, який ведеться із застосуванням зброї та насильства з використанням значних засобів, у якому беруть участь групи людей, що діють за планом. Метою залучених до зіткнення угруповань є відстоювання власних інтересів. Конфлікт має вирішуватися шляхом боротьби та досягнення переваги. </p>
+            <h2>Розвиток збройної боротьби</h2>
+            <p>--------------------</p>
+            <blockquote class="blockquote">
+
+            </blockquote>
+            <p>Найдавнішим свідченням доісторичної війни є мезолітичний цвинтар у Джебель-Сахабі, вік якого становить приблизно 13 400 років. Близько сорока п'яти відсотків скелетів там мали ознаки насильницької смерті, зокрема травматичні пошкодження кісток.З часу появи держави, близько 5000 років тому, військова діяльність відбувалася на більшій частині земної кулі. Оцінки загальної кількості смертей унаслідок війн дуже різняться. За проміжок з 3000 р. до н. е. до 1991 року, розбіг оцінок становить від 145 мільйонів до 2 мільярдів.</p>
+            <h3>Види війни</h3>
+            <p>Найпоширеніші види війн</p>
+            <ul>
+              <li>Гібридна війна</li>
+              <li>Громадянська війна</li>
+              <li>Вітчизняна війна</li>
+              <li>Справедлива війна</li>
+              <li>Тотальна війна</li>
+              <li>Неоголошена війна<li>
+            </ul>
+            <p>Опис кожної із війн</p>
+            <ol>
+              <li>Гібридна війна — війна з поєднанням в застосуванні конвенційної зброї, партизанської війни, тероризму, кібервійни, торгових війн, патентних війн, реваншистських рухів, пропаганди, порушень прав людини, злочинів проти людяності, військових навчань, переселення, узурпації, вплив на громадську думку, злочинні акти цензури, тощо.</li>
+              <li>Громадя́нська війна́ — військова боротьба за владу між громадянами одного суспільства чи країни.</li>
+              <li>Вітчизняна війна — патріотичний термін для позначення оборонної війни.</li>
+              <li>Справедли́ва війна — морально допустима війна, яка відповідає певним критеріям.</li>
+              <li>Тотальна війна — збройне насильство доведене до крайніх меж. Тотальна війна є війною, яка не обмежується суто військовою метою і може призвести до масових цивільних чи інших небойових втрат.</li>
+              <li>Неоголошені війни — це конфлікти між країнами або групами (етнічними, релігійними та інше), які не оголошуються офіційно.</li>
+            </ol>
+            <h2>Наслідки:</h2>
+            <dl>
+              <dt>Воєнні втрати та загибель мирного населення</dt>
+              <dd>Протягом історії людства середня кількість людей, які загинули від війни, коливалася відносно незначно, становлячи приблизно від 1 до 10 людей, що гинуть на 100 000 населення. Однак великі війни, протягом коротших періодів, призвели до значно вищих показників загиблих — зі 100—200 жертвами на 100 000 людей протягом кількох років. </dd>
+              <dt>Найбільші війни за кількістю загиблих</dt>
+              <dd>Найсмертоноснішою війною в історії, з точки зору сукупної кількості смертей з миті її початку, є Друга світова війна, з 1939 по 1945 роки, з 70-85 мільйонами смертей, за якою слідують монгольські завоювання — до 60 мільйонів людей. 2003 року, Річард Смолі визначив війну як шосту найбільшу проблему (з десяти), з якою на його думку, зіткнеться людство протягом наступних п'ятдесяти років. Війна зазвичай, призводить до значного погіршення інфраструктури та екосистеми, зменшення соціальних витрат, голоду, величезної еміграції із зони бойових дій і часто поганого поводження з військовополоненими чи цивільними особами. </dd>
+            </dl>
+            <h2>Поведінкові теорії</h2>
+            <p>Психологи, наприклад Дурбан і Боулбі, стверджують, що людині за природою речей властива агресія. Вона підживлюється сублімацією і проєкцією, коли людина перетворює своє невдоволення в упередження і ненависть до інших рас, релігій, націй чи ідеологій. За цією теорією держава створює і зберігає певний порядок у місцевому суспільстві і водночас створює базу для агресії у вигляді війни. Якщо війна є невіддільною частиною людської натури, як передбачається багатьма психологічними теоріями, то повністю усунути її ніколи не вдасться.</p>
+            <ul>
+              <li><strong>Італійський психоаналітик Франко Форнарі, як послідовник Мелані Кляйн, припустив, що війна є параноїдальною чи проєкційною формою туги. Форнарі стверджував, що війна і насильство розвиваються на підґрунті нашої «потреби в любові»: наше бажання зберігати і захищати священний об'єкт, до якого ми прив'язані, а саме до матері і наш зв'язок з нею. Для дорослих людей таким священним об'єктом є нація. Форнарі наполягає на жертовності, як сутності війни: жадобі людей вмирати за свою країну і прагненні віддати себе на благо нації.</strong></li>
+              <li><em>Зигмунд Фрейд уважав войовничість одним з основних інстинктів, що визначають психологічні «пружини», направленість і зміст людського існування, і, виходячи з цієї позиції, Фройд навіть відмовився взяти участь у руху борців за мир, оскільки вважав війни наслідком періодичних вибухів людської агресивності, які неможливо вгамувати. У відкритому листі до Айнштайна (1932) Фройд писав: «Здається, що це річ цілком природна; безсумнівно, вона має під собою здорову біологічну основу і, насправді, її навряд чи можна уникнути».</em></li>
+              <li>Попри те, що ці теорії можуть пояснити існування воєн, вони не роз'яснюють причини виникнення; водночас вони не розкривають спосіб існування деяких культур, які не знають воєн як таких. Якщо внутрішня психологія людського розуму незмінна, то подібні культури не існували б. Деякі мілітаристи , до прикладу Франц Олександр, стверджують, що стан миру — це омана. Періоди, які заведено називати «мирними», насправді є періодами приготувань до майбутньої війни або ситуацією, коли войовничі інстинкти придушуються сильнішою державою, наприклад — Pax Britannica.</li>
+              <li><del>Ці теорії ґрунтуються, нібито, на волі переважної більшості населення. Однак вони не враховують те, що лише небагато воєн в історії було дійсно наслідком волевиявлення народу. Набагато частіше народ насильно (обманом, пропагандою) втягується у війну своїми правителями. Одну з теорій, яка ставить на чільне місце політичних і військових лідерів, розробив Моріс Волш. Він стверджував, що населення переважно байдуже стосовно війни, а війни відбуваються лише тоді, коли до влади приходять лідери з психологічно ненормальним ставленням до людського життя. Війни затіваються правителями, які навмисно прагнуть воювати , наприклад такими, як — Наполеон, Гітлер і Александр Македонський. Подібні люди стають на чолі держав у часи кризи, коли населення шукає ватажка з твердою волею, котрий, як їм здається, здатний вирішити їхні проблеми.</del> </li>
+            </ul>
+            <p>Це найбільш відомі теорії щодо війн</p>
+            <h2>Еволюційна психологія</h2>
+            <p>Прихильники еволюційної психології схильні стверджувати, що людські війни — це подоба поведінки тварин, які борються за територію чи конкурують за їжу або партнера. Тварини агресивні за своєю природою, а в людському середовищі подібна агресивність виливається у війни. Однак, з розвитком технології людська войовничість досягла такої межі, що почала загрожувати виживанню всього виду. Одним з перших прихильників цієї теорії був Конрад Лоренц.</p>
+            <h3>Соціологічні теорії</h3>
+            <p>Соціологи довгий час вивчали причини виникнення воєн. Існує безліч теорій, багато з яких суперечать одна одній. Послідовники Пріоритету внутрішньої політики (нім. Primat der Innenpolitik) беруть за основу роботи Еккарта Кера (нім. Eckart Kehr) і Ханса-Ульріха Велері (нім. Hans-Ulrich Wehler), які вважали, що війна є вислідом місцевих умов, і тільки напрямок агресії визначається зовнішніми чинниками. Наприклад, Перша світова війна була результатом не міжнародних конфліктів, таємних змов або порушення балансу сил, а наслідком економічного, соціального та політичного становища в кожній країні, залученій до конфлікту.</p>
+            <pre><code>Ця теорія відрізняється від узвичаєного підходу Пріоритету зовнішньої політики (нім. Primat der Außenpolitik) Карла фон Клаузевіца і Леопольда фон Ранке, які стверджували, що війна і мир є наслідком рішень державних діячів і геополітичного становища.</code></pre>
+            <p>---------------------------------------------</p>
+          </article>
+    
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Смертність у двох світових війнах</h2>
+            <p class="blog-post-meta">2/11/2023 <a href="https://uk.wikipedia.org/wiki/Війна">Original Wikipedia</a></p>
+    
+            <p>Смертність у двох світових війнах, які стали найбільшими конфліктами у 20 столітті, була надзвичайно високою і масштабною. </p>
+            <blockquote>
+              <p>Найсмертоноснішою війною в історії, з точки зору сукупної кількості смертей з миті її початку, є  <strong> Друга світова війна</strong> з 1939 по 1945 роки</p>
+            </blockquote>
+            <p>Війна зазвичай, призводить до значного погіршення інфраструктури та екосистеми, зменшення соціальних витрат, голоду, величезної еміграції із зони бойових дій і часто поганого поводження з військовополоненими чи цивільними особами.</p>
+            <h3>Таблиця Смертності</h3>
+            <p>інформація за 2020 рік</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>War</th>
+                  <th>Age</th>
+                  <th>Counter of Death</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>WW1</td>
+                  <td>1914-1918</td>
+                  <td>1 433 282 400</td>
+                </tr>
+                <tr>
+                  <td>WW2</td>
+                  <td>1939-1945</td>
+                  <td>1 891 650 493</td>
+                </tr>
+                <tr>
+                  <td>WW3</td>
+                  <td>?</td>
+                  <td>?</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Totals</td>
+                  <td>-</td>
+                  <td>3 324 932 893</td>
+                </tr>
+              </tfoot>
+            </table>
+    
+            <p>Проста табличка смертності по двох війнах</p>
+          </article>
+    
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Релігія й ідеологія</h2>
+            <p class="blog-post-meta">2/11/2023 <a href="https://uk.wikipedia.org/wiki/Війна">Original Wikipedia</a></p>
+    
+            <p>Релігія й ідеологія є вторинними факторами, і використовуються лише для надання насильству подоби законності, але самі собою не можуть бути джерелом насильства, якщо в суспільстві не існує переважання молоді. Відповідно, прихильники цієї теорії розглядають і «християнський» європейський колоніалізм й імперіалізм, а також «ісламську агресію» і тероризм як наслідок демографічного перекосу. Сектор Газа є типовою ілюстрацією цього явища: підвищена агресивність населення, викликана надлишком молодих невлаштованих чоловіків. А для контрасту ситуацію можна порівнювати з сусіднім, відносно мирним, Ліваном.</p>
+            <ul>
+              <li>Як інший історичний приклад, коли молодь мала велике значення у повстаннях і революціях, можна навести Французьку революцію 1789. У зародженні націонал-соціалізму важливу роль грала економічна депресія в Німеччині. Геноцид в Руанді 1994 також міг бути наслідком серйозного переважання у суспільстві молоді.</li>
+              <li>Попри те, що співвідношення зростання населення та політичної стабільності було відомо ще з часу оприлюднення Меморандуму 200 з національної безпеки (National Security Study Memorandum 200) 1974, ні уряди, ні Всесвітня організація охорони здоров'я не вжили заходів щодо контролю за народжуваністю для запобігання терористичної загрози. Видатний демограф Стівен Д. Мамфорд (Stephen D. Mumford) приписує це впливу Католицької церкви.</li>
+              <li>Теорія переважання молоді стала предметом статистичного аналізу Світового банку, Population Action International і Берлінського інституту демографії та розвитку (нім. Berlin-Institut für Bevölkerung und Entwicklung). Докладні демографічні дані щодо більшості країн, доступні в міжнародній базі даних Бюро перепису населення США.</li>
+            </ul>
+            <p>Теорія переважання молоді критикується за висловлювання, що ведуть до расової, статевої та вікової «дискримінації».</p>
+          </article>
+    
+    
+        </div>
+    
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-body-tertiary rounded">
+              <h4 class="fst-italic">About</h4>
+              <p class="mb-0"><em>Текст був взятий у вільній бібліотеці під назвою Wikipedia. Читаючи це, ви погоджуєшся з нашими правилами користування сайтом. А ось, ви можете прослухати аудіо.<em></p>
+              <audio controls>
+                <source src="{{ random_audio }}" type="audio/mpeg">
+                Ваш браузер не підтримує елемент audio.
+              </audio>
+            </div>
+    
+            <div>
+              <h4 class="fst-italic">Recent posts</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="napoleon">
+                    <img class="bd-placeholder-img" width="100%" height="96" src="/static/Napo.jpg" alt="">
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">Як наполеон прийшов до влади?</h6>
+                      <small class="text-body-secondary">18/5/1814</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="nsdap">
+                    <img class="bd-placeholder-img" width="100%" height="96" src="/static/Nazi.jpg" alt="">
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">Чому німецький народ прийняв до влади НСДАП?</h6>
+                      <small class="text-body-secondary">5/3/1933</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="mussolini">
+                    <img class="bd-placeholder-img" width="100%" height="96" src="/static/Ben.jpg" alt="">
+
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">Мусоліні - диктатор Італії</h6>
+                      <small class="text-body-secondary">1/11/1922</small>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="p-4">
+              <h4 class="fst-italic">Архів</h4>
+              <ol class="list-unstyled mb-0">
+                <li><a href="https://uk.wikipedia.org/wiki/Війна">Wikipedia</a></li>
+              </ol>
+            </div>
+    
+            <div class="p-4">
+              <h4 class="fst-italic">Соц.Мережі</h4>
+              <ol class="list-unstyled">
+                <li><a href="404">Telegram</a></li>
+                <li><a href="404">Discord</a></li>
+                
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+    </main>
+    
+   
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+    
+    
+        
+    
+    <main>
+    
+      <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        </div>
+      
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>One more for good measure.</h1>
+                <p>Some representative placeholder content for the third slide of this carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+    
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+    
+      <div class="container marketing">
+    
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/static/al.jpg" alt="Placeholder" role="img" aria-label="Placeholder">
+
+            <h2 class="fw-normal">Александр Македонський</h2>
+            <p>Геніальний полководець, видатний адміністратор і політик. Засновник великої держави, що охоплювала Македонію, Грецію, завойовану Перську імперію та Єгипет. Його походи позитивно вплинули на розвиток античної науки (особливо географії) і культури (еллінізм). Після його смерті створену імперію поділили між собою його воєначальники — діадохи. </p>
+            <p><a class="btn btn-secondary" href="makedonian_empire">Дізнатися більше »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/static/Yo.jpg" alt="Placeholder" role="img" aria-label="Placeholder">
+            <h2 class="fw-normal">Гай Юлій Цезар</h2>
+            <p>Народився у Римі, Римська республіка. Послідовно домігся всіх ординарних римських посад. Заробив собі ім'я на боротьбі з консервативними сенаторами оптиматами. Організував перший тріумвірат разом із Помпеєм і Крассом (60 до н. е.). Більше восьми років провів у Галльській війні (з 58 до н. е.), приєднавши до республіки Галлію, західний берег Рейну і частину Британії. </p>
+            <p><a class="btn btn-secondary" href="romanian_empire">Дізнатися більше »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/static/Ja.jpg" alt="Placeholder" role="img" aria-label="Placeholder">
+            <h2 class="fw-normal">Жанна Д'арк</h2>
+            <p>17-річна д'Арк повела армію допомоги, щоб звільнити Францію від англійського панування і привести до трону дофіна Карла, у майбутньому короля Карла VII. У 1429 році армія д'Арк зняла облогу Орлеана лише за дев'ять днів, а ряд її подальших швидких перемог призвів до коронації Карла VII в Реймсі.</p>
+            <p><a class="btn btn-secondary" href="france">Дізнатися більше »</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    
+    
+        <!-- START THE FEATURETTES -->
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Битва при Термопілах <span class="text-body-secondary"> (480 р. до н. е.)</span></h2>
+            <p class="lead">Фермопільський прохід обороняли об'єднані війська греків у 500-449 рр. до н. е., а на час битви ними керував спартанський цар Леонід на чолі ядра із 300 спартанців. Чотири дні Ксеркс вичікував біля самого проходу, а потім розпочав наступ, під час якого почергово змінював по-різному озброєні військові загони. Після двох днів запеклої боротьби персам не вдалося пройти ущелиною, захищеною муром та армією греків, що мала 5 920 воїнів. Згідно із твердженнями Геродота війська персів налічували 1,7—2,6 млн воїнів, проте сучасні вчені вважають, що це число становить близько 200 тисяч.
+
+              У битві обидві сторони зазнали великих втрат. Персам удалося нарешті подолати оборону після того, як обійшли прохід гірськими стежками, що вказав зрадник Ефіальт. За цей час Леонід відпустив 1 200 гоплітів і залишив лише 300 воїнів (за іншими даними залишилося ще 200 чи 1100 воїнів із ближніх міст, а також ілоти). Греків про обхідний наступ попередили бігуни фокійців, які обороняли стежку, але були відтіснені персами та перебіжчиком Тіррастіадом. Цар загинув разом із воїнами. Геродот також стверджує, що в полон здалися фіванці, проте вчені вважають це наклепом, адже праця Геродота створена в час міжусобиць Фів та Афін.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/static/Ta.png" alt="Placeholder: 500x500" role="img" aria-label="Placeholder">
+
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Битва за Сталінград <span class="text-body-secondary"> (1942-1943)</span></h2>
+            <p class="lead">Сталін заборонив повну евакуацію жителів міста, щоби їхня присутність сприяла захисникам в організації опору. Цивільні особи, включно з жінками та дітьми, були мобілізовані для копання траншей і будівництва оборонних позицій. Масові бомбові атаки люфтваффе 23 серпня призвели до пожеж, в яких загинули тисячі мирних жителів і які перетворили місто в «місячний ландшафт» (80 % житлових будинків в місті були знищені).
+
+              Одним із перших удар прийняв 1077-й зенітний полк, сформований переважно з молодих жінок без належної підготовки. Попри це, і з невеликою підтримкою від інших радянських підрозділів, гарматні розрахунки зайняли позиції проти наступаючих німецьких танків. 16-їй танковій дивізії довелося битися проти 1077-го полку, поки всі його 37 батарей не були знищені або захоплені в полон.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/static/st.jpg" alt="Placeholder: 500x500" role="img" aria-label="Placeholder">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Битва при Вільгельмсбурзі <span class="text-body-secondary">(1066)</span></h2>
+            <p class="lead">Вільгельм опирався на базову тактику, при якій спочатку лучники повинні були ослабити ворога стрілами, потім у бій повинна була вступити піхота, а вирішального удару завдати кавалерія. Проте його тактика не спрацювала за планом. Війська Вільгельма напали на англосаксів одразу ж після побудови лав, і лучники вистрілили кілька разів, але стріли влучали у стіну щитів і не завдали великої шкоди. Вважаючи, що англосакси зазнали втрат, Вільгельм звелів наступати піхоті. Нормандці побігли вгору, а англосакси кидали згори вниз усе, що могли: каміння, дротики, палиці. Ця злива завдала нормандцям значної шкоди, змусивши їх зламати лінію.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/static/Vi.jpg" alt="Placeholder: 500x500" role="img" aria-label="Placeholder">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <!-- /END THE FEATURETTES -->
+    
+      </div><!-- /.container -->
+    
+    
+
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        
+    
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+   
+    
+        
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+            <span class="fs-4">Wiki.Shorts</span>
+          </a>
+        </header>
+    
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">«Олександр Олесь»</h1>
+            <p class="col-md-8 fs-4">Війна, війна! І знов криваві ріки! І грім гармат, і шаблі дзвін. Могили, сироти, каліки І сум покинутих руїн.</p>
+            <a href="quotes" class="btn btn-primary btn-lg" role="button"></a>
+          </div>
+        </div>
+    
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+              <h2>«Ж. Дантон»</h2>
+              <p>Революція пожирає своїх дітей</p>
+              <a href="quotes" class="btn btn-outline-light" type="button"></a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+              <h2>«Марк Твен»</h2>
+              <p>Він міг передбачати війни і голод; втім, це було неважко: завжди десь та воюють і майже завжди де-небудь голодують.</p>
+              <a href="quotes" class="btn btn-outline-secondary" role="button"></a>
+            </div>
+          </div>
+        </div>
+    
+
+      </div>
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        
+    
+    <div class="container px-4 py-5" id="custom-cards">
+
+    
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"> абсолютно біле, як і абсолютно чорне, здається якимось дефектом зору</h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>Джордж Оруэлл</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+  
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Моральність є стадний інстинкт в окремій людині</h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>Фрідріх Ніцше</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">	
+                  Кайдани знесиленого людства зроблені з канцелярського паперу  </h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>Франц Кафка</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+      <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+          </symbol>
+          <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+          </symbol>
+          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+          </symbol>
+          <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </symbol>
+        </svg>
+    
+   
+    
+        
+    <main class="container py-5">
+      <h1>Доба великих географічних відкриттів</h1>
+      <p class="lead">також відома як <a href="https://uk.wikipedia.org/wiki/Доба_великих_географічних_відкриттів#:~:text=Доба%20великих%20географічних%20відкриттів%2C%20також,%2C%20Америці%2C%20Азії%20та%20Океанії.">ранній новий період </a> — історичний період в європейській історії з XV по XVII століття, під час якого європейські мореплавці досліджували раніше невідомі європейцям регіони по всій Земній кулі — в Африці, Америці, Азії та Океанії.</p>
+    
+      <p>Цей період частково збігається з Добою вітрильників.</p>
+    
+      <pre><code>
+    &lt; Систематичні заморські дослідження на початковому етапі Доби великих географічних відкриттів здійснювались мешканцями Піренейського півострова — португальцями та іспанцями, до яких згодом приєдналися англійці, голландці та французи. Європейські дослідження за межами Середземного моря почалися з морських експедицій Португальського королівства на Канарські острови в 1336 році[2], а протягом XV століття португальці відкрили атлантичні архіпелаги Мадейра та Азори, дослідили узбережжя Західної Африки та нарешті в 1498 році відкрили морський шлях до Індії. &gt;
+      </code></pre>
+    
+      <p>Масштабні георграфічні відкриття цього періоду, особливо відкриття та колонізація Нового Світу здійснили важливий вплив на розвиток європейської культури та економіки, а також призвели до запровадження колоніалізму в якості урядової політики провідними європейськими державами. Європейські географічні дослідження призвели до зростання міжнародної торгівлі та виникнення європейських колоніальних імперій, встановлення регулярних контактів між <code> Старим Світом (Європа, Азія та Африка) та Новим Світом (Америка)</code> а також Австралією, започаткувавши Колумбів обмін — масштабне переміщення рослин, тварин, їжі, людського населення (включаючи рабів), інфекційних хвороб і культурних здобутків між Східною та Західною півкулями. </p>
+    
+      <hr class="my-5">
+    
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 690px;">
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/VGV.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+
+            <div class="card-body">
+              <h5 class="card-title">Стара Європа</h5>
+              <p class="card-text">Після того, як падіння Римської імперії значною мірою розірвало зв'язок між Європою та землями, розташованими далі на схід, християнська Європа була здебільшого глухим закутком у порівнянні з арабським світом, який швидко завоював і включив великі території колишньої Римської імперії на Близькому Сході та в Північній Африці і почав активно поширюватись на схід аж до Китаю.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+          <div class="card p-3">
+            <figure class="p-3 mb-0">
+              <blockquote class="blockquote">
+                <p>Піднесення європейської торгівлі</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                 <cite title="Source Title">By Wikipedia</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/Tex.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+            <div class="card-body">
+              <h5 class="card-title">Морські технології: нові кораблі та компас</h5>
+              <p class="card-text">Технологічними досягненнями, які були важливими для Доби великих георгафічних відкриттів були прогрес у конструкції кораблів та поширення використання засобів морської навігації — магнітного компаса, морської астролябії, квадранта та астрономічних таблиць.
+
+                Компас став важливим доповненням до стародавніх методів астронавігації, заснованих на спостереженнях за Сонцем і зірками. Компас використовувався для навігації в Китаї вже в XI столітті та був запозичений арабськими торговцями в Індійському океані, де його використання вперше згадується в 1232 році</p>
+              <p class="card-text"><small class="text-body-secondary">1400—1600</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 171px;">
+          <div class="card text-bg-primary text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>Ранні географічні знання та карти</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-white">
+              <cite title="Source Title">В Периплі Еритрейського моря, античному документі, датованому 40-60 роками нашої ери, описується нещодавно відкритий шлях через Червоне море до Індії з описом ринків у містах навколо Червоного моря, Перської затоки та Індійського океану, в тому числі вздовж східного узбережжя Африки (узбережжя Суахілі), при описі якого зазначається, що «за цими місцями незвіданий океан вигинається на захід і пролягає вздовж регіонів на південь від Ефіопії, Лівії та Африки, він змішується із західним морем (можливе посилання на Атлантичний океан)». Європейські середньовічні знання про Азію поза межами Візантійської імперії черпалися з часткових звітів, часто затьмарених легендами, що датувалися часами завоювань Александра Македонського та його наступників.</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 310px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Португальські дослідження за часів інфанта Енріке</h5>
+              <p class="card-text">Щоб забезпечити свою монополію на торгівлю, європейці (починаючи з португальців) намагалися запровадити середземноморську систему торгівлі, в якій держави застосовували військову силу або погрози для залучення торгових потоків через контрольовані ними порти, щоб обкласти товари оподатковуванню. У 1415 році з метою взяти під свій контроль торгівлю з північноафриканським узбережжям, Португальське королівство завоювало марокканську Сеуту. Молодий португальський інфант Енріко Мореплавець, який безпосередньо приймав участь в завоюванні, на місці дізнався про можливості прибуткової торгівлі по транссахарських торгових шляхах. Протягом століть шляхи торгівлі рабами та золотом, що з'єднували західну Субсахарську Африку з Середземномор'ям, проходили через Західносахарську пустелю, яку контролювли північноафриканські «маври».</p>
+              <p class="card-text"><small class="text-body-secondary">1419—1507</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 362px;">
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="200" src="/static/Map.jpg" alt="Placeholder: Image cap" role="img" aria-label="Placeholder: Image cap">
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 378px;">
+          <div class="card p-3 text-end">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>Іспанські дослідження: Колумб відкриває Новий світ</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+              <cite title="Source Title">Кастилія, одвічний піренейський суперник Португалії, розпочала завоювання Канарських островів біля західноафриканського узбережжя ще у 1402 році, але потім протягом більшої частини XV століття її увага була зосереджена на внутрішній політиці Піренейського півострова та Реконкісті проти мусульманських завойовників. </cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 488px;">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Тордесільяський договір (1494)</h5>
+              <p class="card-text">Невдовзі після повернення Колумба з території, яка пізніше буде названа «Вест-Індією», щоб уникнути конфлікту в нововідкритих землях між іспанцями та португальцями виникла потреба у розподілі між ними зон впливу. 4 травня 1493 року, через два місяці після прибуття Колумба, папа Олександр VI видав для католицьких королів буллу Inter caetera у якій говорилося, що всі землі на захід і південь від лінії, проведеної від полюса до полюса в 100 лігах на захід і південь від будь-якого з належних португальцям Азорських островів або островів Кабо-Верде повинні належати Кастилії. У ньому не згадувалася Португалія, яка не могла претендувати на нещодавно відкриті землі на схід від лінії.</p>
+              <p class="card-text"><small class="text-body-secondary">1494</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        <script async="" src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+    
+ 
+
+
+        <body>
+            <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+              <symbol id="check2" viewBox="0 0 16 16">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+              </symbol>
+              <symbol id="circle-half" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+              </symbol>
+              <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+                <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+              </symbol>
+              <symbol id="sun-fill" viewBox="0 0 16 16">
+                <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+              </symbol>
+            </svg>
+        
+        
+            
+        <header data-bs-theme="dark">
+          <div class="collapse text-bg-dark" id="navbarHeader">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                  <h4>About</h4>
+                  <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                  <h4>Contact</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                    <li><a href="#" class="text-white">Like on Facebook</a></li>
+                    <li><a href="#" class="text-white">Email me</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </header>
+        
+        <main>
+        
+       
+        
+          <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/ww1.mp4" type="video/mp4">
+                      Error
+                    </video>
+                    
+                    <div class="card-body">
+                      <p class="card-text">Відео про першу світову війну</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1914</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/ww2(1).mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Друга світова - перша частина</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1939</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/ww2(2).mp4" type="video/mp4">
+                      Errorо.
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Друга світова - друга частина</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1939</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/cold-war(1).mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Холодна війна - перша частина</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1946</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/cold-war(2).mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Холодна війна - друга частина</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1946</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/napoleon-wars(1).mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">наполеоновські війни - перша частина</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1799</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/napoleon-wars(2).mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">наполеоновські війни - друга частина</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1799</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/france-revolution(1).mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Французька революція - перша частина</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1789</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <video width="100%" height="225" controls>
+                      <source src="/static/france-revolution(2).mp4" type="video/mp4">
+                      Error
+                    </video>
+                    <div class="card-body">
+                      <p class="card-text">Французька революція - друга частина</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                        </div>
+                        <small class="text-body-secondary">1789</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </main>
+    
+        <main class="container">
+   
+        
+          <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 class="border-bottom pb-2 mb-0 d-flex justify-content-between">Commentaries <span class="float-end"><a href="commentaries">See Full</a></span></h6>
+            <div class="d-flex text-body-secondary pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+              <p class="pb-3 mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark">@Max</strong>
+                Дуже зацікавив дизайн сайту, головний мінус - білий колір. Треба добавити функцію зміни кольору сайту.
+              </p>
+            </div>
+            <div class="d-flex text-body-secondary pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+              <p class="pb-3 mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark">@Andrey</strong>
+                Інформація цікава, але занадто суха.Треба більше розбавляти інформацію.
+              </p>
+            </div>
+            <div class="d-flex text-body-secondary pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+              <p class="pb-3 mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark">@Anna</strong>
+                Все сподобалося, поєдання таких колорів - моє улюбленне!
+              </p>
+            </div>
+          </div>
+        
+
+          </div>
+        </main>       
+        
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <p class="col-md-4 mb-0 text-body-secondary">© 2023 Wikipedia, by q1dox</p>
+          
+              <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+          
+              <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">Features</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+                <li class="nav-item"><a href="404" class="nav-link px-2 text-body-secondary">About</a></li>
+              </ul>
+            </footer>
+          </div>
+</body>
+    
+    
+</html>
